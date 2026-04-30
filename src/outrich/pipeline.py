@@ -10,8 +10,7 @@ from outrich.ai.provider import AIProvider
 from outrich.ai.qualifier import qualify_lead
 from outrich.config import SEGMENT_QUOTAS, Settings
 from outrich.db import store
-from outrich.models import Segment
-from outrich.sources import apify_linkedin, google_xray
+from outrich.sources import apify_linkedin
 from outrich.sources.fixture import load_fixture
 from outrich.trigger import dry_run
 from outrich.report import markdown
@@ -37,25 +36,6 @@ def stage_discover(settings: Settings, source: str, use_cache: bool) -> int:
     return count
 
 
-def stage_enrich(settings: Settings, use_cache: bool) -> int:
-    leads = store.get_leads_without_qualification(settings.db_path)
-    enriched = 0
-
-    for lead in track(leads, description="Enriching leads..."):
-        signals = google_xray.enrich_lead(
-            lead_id=lead["id"],
-            full_name=lead["full_name"],
-            settings=settings,
-            use_cache=use_cache,
-        )
-        if signals:
-            store.save_enrichments(settings.db_path, lead["id"], signals)
-            enriched += 1
-
-    console.print(f"[green]✓ Enriched {enriched} leads with external signals[/green]")
-    return enriched
-
-
 def stage_qualify(settings: Settings) -> int:
     provider = AIProvider(settings)
     pending = store.get_leads_without_qualification(settings.db_path)
@@ -67,11 +47,8 @@ def stage_qualify(settings: Settings) -> int:
     qualified = 0
     for lead in track(pending, description="Qualifying leads..."):
         profile = json.loads(lead["raw_profile"])
-        enrichments = [
-            dict(r) for r in store.get_enrichments_for_lead(settings.db_path, lead["id"])
-        ]
         try:
-            qual, model_used = qualify_lead(provider, profile, enrichments)
+            qual, model_used = qualify_lead(provider, profile)
             store.save_qualification(settings.db_path, lead["id"], qual, model_used)
             qualified += 1
         except Exception as exc:
@@ -82,7 +59,6 @@ def stage_qualify(settings: Settings) -> int:
 
 
 def stage_select(settings: Settings) -> list[int]:
-    """Pick top-N per segment quota. Returns selected lead IDs."""
     all_qualified = store.get_qualified_leads(settings.db_path)
 
     buckets: dict[str, list] = {seg: [] for seg in SEGMENT_QUOTAS}
@@ -122,9 +98,6 @@ def stage_personalize(settings: Settings, selected_ids: list[int]) -> int:
         if not lead:
             continue
         profile = json.loads(lead["raw_profile"])
-        enrichments = [
-            dict(r) for r in store.get_enrichments_for_lead(settings.db_path, lead_id)
-        ]
         qualification = {
             "segment": lead["segment"],
             "relevance_score": lead["relevance_score"],
@@ -133,7 +106,7 @@ def stage_personalize(settings: Settings, selected_ids: list[int]) -> int:
             "pain_points": json.loads(lead["pain_points"] or "[]"),
         }
         try:
-            msgs, model_used = personalize_lead(provider, profile, enrichments, qualification)
+            msgs, model_used = personalize_lead(provider, profile, qualification)
             store.save_messages(settings.db_path, lead_id, msgs, model_used)
             drafted += 1
         except Exception as exc:
@@ -165,7 +138,6 @@ def run_pipeline(
     console.rule("[bold blue]OutRich Pipeline")
 
     stage_discover(settings, source, use_cache)
-    stage_enrich(settings, use_cache)
     stage_qualify(settings)
     selected = stage_select(settings)
     stage_personalize(settings, selected)

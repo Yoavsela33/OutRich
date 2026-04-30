@@ -57,18 +57,6 @@ def upsert_lead(db_path: Path, profile: RawProfile) -> int:
         return cur.fetchone()["id"]
 
 
-def save_enrichments(db_path: Path, lead_id: int, signals: list[dict]) -> None:
-    with _conn(db_path) as con:
-        for s in signals:
-            con.execute(
-                """
-                INSERT OR IGNORE INTO enrichments (lead_id, kind, url, title, snippet)
-                VALUES (?, ?, ?, ?, ?)
-                """,
-                (lead_id, s.get("kind"), s.get("url"), s.get("title"), s.get("snippet")),
-            )
-
-
 def save_qualification(
     db_path: Path, lead_id: int, qual: Qualification, model_used: str
 ) -> None:
@@ -149,14 +137,6 @@ def get_leads_without_qualification(db_path: Path) -> list[sqlite3.Row]:
             WHERE q.id IS NULL
             ORDER BY l.id
             """
-        ).fetchall()
-
-
-def get_enrichments_for_lead(db_path: Path, lead_id: int) -> list[sqlite3.Row]:
-    with _conn(db_path) as con:
-        return con.execute(
-            "SELECT kind, url, title, snippet FROM enrichments WHERE lead_id = ?",
-            (lead_id,),
         ).fetchall()
 
 

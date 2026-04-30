@@ -14,8 +14,7 @@ ScyllaDB's core value proposition:
   - Drop-in Apache Cassandra API compatibility (no rewrite required)
   - Operational simplicity: fewer nodes, less tuning
 
-You receive a LinkedIn profile and optional external signals (blog posts, talks, GitHub
-activity). Assign the lead to exactly one of these four segments:
+You receive a LinkedIn profile. Assign the lead to exactly one of these four segments:
 
   obvious_fit
     Senior engineer / architect / staff+ / principal / head-of / CTO at a company that
@@ -54,11 +53,9 @@ Output ONLY valid JSON matching the provided schema. No prose, no markdown fence
 def qualify_lead(
     provider: AIProvider,
     profile: dict,
-    enrichments: list[dict],
 ) -> tuple[Qualification, str]:
     user = (
         f"<profile>\n{json.dumps(profile, indent=2)}\n</profile>\n\n"
-        f"<enrichment>\n{json.dumps(enrichments, indent=2)}\n</enrichment>\n\n"
         f"<icp>\n{ICP}\n</icp>"
     )
     return provider.complete(Qualification, _SYSTEM, user)

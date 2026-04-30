@@ -24,7 +24,7 @@ Opus produced: architecture diagram, file layout, all pydantic schemas, all SQL,
 ### Build order handed to Sonnet
 
 Sonnet received the full spec and executed in this sequence:
-project skeleton → models → config → DB schema → DB store → AI provider → qualifier agent → personalizer agent → Apify source → Google X-ray source → fixture loader → trigger → report generator → pipeline orchestrator → CLI → fixture data (42 profiles) → tests → README → PROMPTS.md
+project skeleton → models → config → DB schema → DB store → AI provider → qualifier agent → personalizer agent → Apify source → fixture loader → trigger → report generator → pipeline orchestrator → CLI → fixture data (42 profiles) → tests → README → PROMPTS.md
 
 ---
 
@@ -32,7 +32,7 @@ project skeleton → models → config → DB schema → DB store → AI provide
 
 ### Qualifier agent
 
-**Purpose:** Evaluate a LinkedIn profile (+ enrichment signals) against the ICP and assign a segment.
+**Purpose:** Evaluate a LinkedIn profile against the ICP and assign a segment.
 
 **Model:** Claude Sonnet 4.6 (primary) → Gemini 1.5 Flash (fallback)
 
@@ -48,8 +48,7 @@ ScyllaDB's core value proposition:
   - Drop-in Apache Cassandra API compatibility (no rewrite required)
   - Operational simplicity: fewer nodes, less tuning
 
-You receive a LinkedIn profile and optional external signals (blog posts, talks, GitHub
-activity). Assign the lead to exactly one of these four segments:
+You receive a LinkedIn profile. Assign the lead to exactly one of these four segments:
 
   obvious_fit
     Senior engineer / architect / staff+ / principal / head-of / CTO at a company that
@@ -79,9 +78,9 @@ Output ONLY valid JSON matching the provided schema. No prose, no markdown fence
 **Output schema:** `Qualification` pydantic model — `segment`, `relevance_score` (0–100), `reasoning` (50–600 chars), `pain_points` (list), `scylla_angle` (20–300 chars), `tech_stack_signals` (list).
 
 **Design decisions:**
-- Segment is an LLM output, not a rule-based filter. This means the model can surface unexpected signal (e.g., a job description that implies DataStax pain even if the headline doesn't say "Cassandra").
+- Segment is an LLM output, not a rule-based filter. The model surfaces unexpected signals (e.g., a summary that implies DataStax pain even if the headline doesn't say "Cassandra").
 - `scylla_angle` forces the model to be specific about the ScyllaDB pitch for *this person*, not a generic value prop.
-- `pain_points` list surfaces what the model picked up — useful for personalizer input and for the human reviewing the report.
+- `pain_points` surfaces what the model detected — useful for both the personalizer and the human reviewing the report.
 
 ---
 
@@ -97,7 +96,7 @@ Output ONLY valid JSON matching the provided schema. No prose, no markdown fence
 You are a senior outbound BDR at ScyllaDB writing to one specific person.
 
 Your output MUST be earned, not templated. Every personalization claim must trace back
-to a verifiable fact in the profile, enrichment signals, or qualification reasoning.
+to a verifiable fact in the profile or qualification reasoning.
 If you cannot trace a claim to a fact, omit it.
 
 ─── LinkedIn Invite ───────────────────────────────────────────────────────────────────
@@ -108,7 +107,7 @@ If you cannot trace a claim to a fact, omit it.
 
 ─── Follow-up Email ───────────────────────────────────────────────────────────────────
   • Subject: ≤60 characters. Specific, not clickbait.
-  • Body: 80–130 words. Reference one concrete signal (their talk, post, project, role).
+  • Body: 80–130 words. Reference one concrete signal (their role, company scale, stack).
   • One CTA only: a 15-min call or a specific resource (benchmark, case study).
   • Sign off as: "— Yoav, ScyllaDB"
 
@@ -128,9 +127,9 @@ Output ONLY valid JSON matching the provided schema. No prose, no markdown fence
 **Output schema:** `DraftedMessages` — contains `LinkedInInvite` (body ≤300 chars, hooks list) and `FollowUpEmail` (subject ≤60 chars, body, hooks list). Pydantic validators enforce these constraints at parse time — if the model exceeds the char limit, `instructor` triggers a retry with the validation error as feedback.
 
 **Design decisions:**
-- **Hooks as anti-hallucination control.** The model must list facts it used. An empty hooks list means the message is generic — the schema's `min_length=1` on hooks forces a rewrite via instructor retry. Reviewers can read the hooks to verify the message is actually personalized.
-- **Qualifier output feeds personalizer input.** The `scylla_angle` and `pain_points` from qualification are passed directly to the personalizer, creating a reasoning chain: qualify → surface specific angle → write to that angle.
-- **Banned phrases list in the prompt.** Sales-y language patterns are enumerated explicitly because LLMs default to them without instruction.
+- **Hooks as anti-hallucination control.** The model must list facts it used. An empty hooks list fails schema validation, forcing a retry. Reviewers can read the hooks to verify the message is actually personalized.
+- **Qualifier output feeds personalizer input.** The `scylla_angle` and `pain_points` from qualification are passed directly, creating a reasoning chain: qualify → surface specific angle → write to that angle.
+- **Banned phrases list.** Sales-y language patterns are enumerated explicitly because LLMs default to them without instruction.
 
 ---
 
@@ -138,6 +137,6 @@ Output ONLY valid JSON matching the provided schema. No prose, no markdown fence
 
 **File:** [`src/outrich/ai/provider.py`](src/outrich/ai/provider.py)
 
-Uses `instructor` to wrap both Anthropic and Google GenAI clients. Claude uses tool-use mode for structured output (most reliable); Gemini uses JSON mode. `AIProvider.complete()` tries Claude first and falls back to Gemini transparently if Claude fails or is unconfigured.
+Uses `instructor` to wrap the Anthropic client for structured output via tool use (most reliable). For Gemini, uses `google.genai` directly with JSON mode and pydantic schema validation. `AIProvider.complete()` tries Claude first and falls back to Gemini transparently if Claude fails or is unconfigured.
 
 Pydantic schema validation is enforced at the instructor layer — if the model returns malformed JSON or violates a constraint, instructor retries the call with the validation error appended to the prompt (up to 3 retries by default).

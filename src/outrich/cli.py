@@ -1,13 +1,13 @@
 import logging
 import warnings
 from pathlib import Path
-
-warnings.filterwarnings("ignore", category=FutureWarning, module="instructor")
 from typing import Annotated, Optional
 
 import typer
 from rich.console import Console
 from rich.table import Table
+
+warnings.filterwarnings("ignore", category=FutureWarning, module="instructor")
 
 from outrich.config import get_settings
 from outrich.db import store
@@ -37,13 +37,6 @@ def discover(source: SourceArg = "fixture", no_cache: NoCacheArg = False) -> Non
     """Discover leads from Apify (live) or the committed fixture (offline)."""
     settings = get_settings()
     pipeline.stage_discover(settings, source=source, use_cache=not no_cache)
-
-
-@app.command()
-def enrich(no_cache: NoCacheArg = False) -> None:
-    """Enrich existing leads with Google X-ray (blog posts, talks, GitHub)."""
-    settings = get_settings()
-    pipeline.stage_enrich(settings, use_cache=not no_cache)
 
 
 @app.command()

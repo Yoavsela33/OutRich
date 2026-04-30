@@ -11,17 +11,6 @@ CREATE TABLE IF NOT EXISTS leads (
     discovered_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE IF NOT EXISTS enrichments (
-    id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    lead_id     INTEGER NOT NULL REFERENCES leads(id) ON DELETE CASCADE,
-    kind        TEXT    NOT NULL,  -- 'blog' | 'talk' | 'github' | 'mention'
-    url         TEXT,
-    title       TEXT,
-    snippet     TEXT,
-    enriched_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    UNIQUE(lead_id, url)
-);
-
 CREATE TABLE IF NOT EXISTS qualifications (
     id                  INTEGER PRIMARY KEY AUTOINCREMENT,
     lead_id             INTEGER UNIQUE NOT NULL REFERENCES leads(id) ON DELETE CASCADE,

@@ -26,8 +26,6 @@ class Settings(BaseSettings):
     anthropic_api_key: Optional[str] = None
     gemini_api_key: Optional[str] = None
     apify_token: Optional[str] = None
-    google_cse_api_key: Optional[str] = None
-    google_cse_cx: Optional[str] = None
 
     claude_model: str = "claude-sonnet-4-6"
     gemini_model: str = "gemini-1.5-flash"

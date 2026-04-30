@@ -1,23 +1,22 @@
 # OutRich
 
-AI-powered B2B outreach pipeline. Define your ICP and a target competitor's user base — OutRich handles lead discovery, qualification, and personalized message drafting at scale, with a full audit trail in a local database.
+AI-powered B2B outreach pipeline. Define your ICP and a target competitor's user base — OutRich handles lead discovery, AI qualification, and personalized message drafting at scale, with a full audit trail in a local database.
 
 ## How it works
 
 ```
-Discover → Enrich → Qualify → Select → Personalize → Trigger → Report
- Apify     Google    Claude    6/3/1    Claude        Dry-run    Markdown
- LinkedIn  X-ray     (LLM)    Quota    (LLM)         + DB log   + SQLite
+Discover → Qualify → Select → Personalize → Trigger → Report
+ Apify     Claude    6/3/1    Claude        Dry-run    Markdown
+ LinkedIn  (LLM)    Quota    (LLM)         + DB log   + SQLite
 ```
 
-**Six-stage pipeline, each backed by the DB — composable and resumable:**
+**Five-stage pipeline, each backed by the DB — composable and resumable:**
 
 1. **Discover** — Pull LinkedIn profiles via Apify (live) or a committed fixture (offline). Raw profiles are saved immediately; reruns skip already-discovered leads.
-2. **Enrich** — For each lead, run a Google X-ray search (`"Name" "Competitor" -site:linkedin.com`) to find blog posts, conference talks, and GitHub activity. Results are cached per-lead.
-3. **Qualify** — LLM evaluates each profile against your ICP, assigns a segment and a 0–100 score, identifies pain points, and writes a tailored ScyllaDB angle.
-4. **Select** — Quota-based selection: top 6 `obvious_fit` + top 3 `high_potential_low_experience` + top 1 `wild_card`.
-5. **Personalize** — LLM drafts a LinkedIn connection note (≤300 chars, enforced) and a follow-up email per selected lead. Every message includes a list of personalization hooks — the actual facts used, as an anti-hallucination control.
-6. **Trigger** — Dry-run by default: logs every "send" to the console and the DB. Real send adapters are intentionally unimplemented; the interface is wired.
+2. **Qualify** — LLM evaluates each profile against your ICP, assigns a segment and a 0–100 score, identifies pain points, and writes a tailored ScyllaDB angle. Already-qualified leads are skipped on reruns.
+3. **Select** — Quota-based selection: top 6 `obvious_fit` + top 3 `high_potential_low_experience` + top 1 `wild_card`.
+4. **Personalize** — LLM drafts a LinkedIn connection note (≤300 chars, enforced by schema) and a follow-up email per selected lead. Every message includes a list of personalization hooks — the specific facts used, as an anti-hallucination control.
+5. **Trigger** — Dry-run by default: logs every "send" to the console and the DB. Real send adapters are intentionally unimplemented; the interface is wired for a production integration.
 
 ## Segmentation rationale
 
@@ -68,13 +67,12 @@ make run-live
 outrich run --source apify
 ```
 
-API responses are cached to `data/cache/` — subsequent runs use cached data automatically. Force fresh calls with `--no-cache`.
+Apify responses are cached to `data/cache/apify_discover.json` — subsequent runs use cached data automatically. Force a fresh pull with `--no-cache`.
 
 ### Individual stages
 
 ```bash
 outrich discover --source fixture   # populate DB with leads
-outrich enrich                      # Google X-ray enrichment
 outrich qualify                     # AI qualification (skips already-qualified)
 outrich select                      # print selected lead IDs (6/3/1 quota)
 outrich personalize                 # draft messages for selected leads
@@ -99,8 +97,6 @@ All settings via `.env` (see `.env.example`):
 | `ANTHROPIC_API_KEY` | one of these | — | Claude (primary LLM) |
 | `GEMINI_API_KEY` | one of these | — | Gemini (fallback LLM) |
 | `APIFY_TOKEN` | for `--source apify` | — | LinkedIn profile discovery |
-| `GOOGLE_CSE_API_KEY` | optional | — | X-ray enrichment |
-| `GOOGLE_CSE_CX` | optional | — | Custom Search Engine ID |
 | `CLAUDE_MODEL` | optional | `claude-sonnet-4-6` | Override Claude model |
 | `GEMINI_MODEL` | optional | `gemini-1.5-flash` | Override Gemini model |
 
@@ -115,7 +111,6 @@ Every external API call is cached:
 | Source | Cache location |
 |---|---|
 | Apify discovery | `data/cache/apify_discover.json` |
-| Google X-ray (per lead) | `data/cache/xray/{lead_id}.json` |
 | LLM qualification | `qualifications` table (skips if row exists) |
 | LLM personalization | `messages` table (skips if row exists) |
 
@@ -147,7 +142,6 @@ src/outrich/
 │   └── store.py        All DB reads and writes
 ├── sources/
 │   ├── apify_linkedin.py  Live Apify discovery (with cache)
-│   ├── google_xray.py     Google CSE enrichment (with cache)
 │   └── fixture.py         Offline fixture loader
 ├── trigger/
 │   └── dry_run.py      Logs messages to console + send_log table
