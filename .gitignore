@@ -1,0 +1,14 @@
+.env
+data/outrich.db
+data/outrich.db-shm
+data/outrich.db-wal
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
+.pytest_cache/
+data/cache/
+data/sample_run/*.db
+.DS_Store
