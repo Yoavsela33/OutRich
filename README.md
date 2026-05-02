@@ -5,6 +5,23 @@ AI-powered B2B outreach pipeline. Define your ICP and a target competitor's user
 **Want to see output without running anything?** A complete sample run is committed to this repo — 42 DataStax employees qualified, 10 selected, 20 messages drafted:
 **[Full report →](data/sample_run/report.md)** &nbsp;|&nbsp; **[Results CSV →](data/sample_run/results.csv)** &nbsp;|&nbsp; **[SQLite DB →](data/sample_run/outrich.db)**
 
+## Viewing the results (no setup required)
+
+All output from a completed pipeline run is committed to this repo. No API keys, no Python, no install.
+
+**To see each candidate and the message drafted for them:**
+
+- **[`data/sample_run/report.md`](data/sample_run/report.md)** — The primary human-readable output. Opens directly on GitHub. For each of the 10 selected leads you'll see: full profile, AI qualifier reasoning, ScyllaDB angle, pain points, the LinkedIn connection note (with character count), and the follow-up email — including the personalization hooks the AI used, as an anti-hallucination audit trail. Rejected leads are included at the bottom with the AI's reasoning.
+
+- **[`data/sample_run/results.csv`](data/sample_run/results.csv)** — Flat table covering all 42 leads. Each row is one candidate. For the 10 selected leads, `linkedin_invite`, `email_subject`, and `email_body` are populated. The `selected` column is `yes`/`no`. Open in Excel, Google Sheets, or any CSV viewer.
+
+- **[`data/sample_run/outrich.db`](data/sample_run/outrich.db)** — The SQLite source-of-truth database. Query it with any SQLite viewer (e.g., [DB Browser for SQLite](https://sqlitebrowser.org/), TablePlus, or `sqlite3` in the terminal). Tables: `leads`, `qualifications`, `messages`, `send_log`.
+
+**Quick orientation:**
+- Want the narrative, with reasoning and messages formatted per person? → `report.md`
+- Want to sort, filter, or export to a spreadsheet? → `results.csv`
+- Want to query raw pipeline data? → `outrich.db`
+
 ## How it works
 
 ```
