@@ -34,7 +34,7 @@ project skeleton → models → config → DB schema → DB store → AI provide
 
 **Purpose:** Evaluate a LinkedIn profile against the ICP and assign a segment.
 
-**Model:** Claude Sonnet 4.6 (primary) → Gemini 1.5 Flash (fallback)
+**Model:** Claude Sonnet 4.6 (primary) → Gemini 2.0 Flash (fallback)
 
 **System prompt** (source: [`src/outrich/ai/qualifier.py`](src/outrich/ai/qualifier.py)):
 
@@ -88,7 +88,7 @@ Output ONLY valid JSON matching the provided schema. No prose, no markdown fence
 
 **Purpose:** Draft a LinkedIn connection note and a follow-up email for a qualified, selected lead.
 
-**Model:** Claude Sonnet 4.6 (primary) → Gemini 1.5 Flash (fallback)
+**Model:** Claude Sonnet 4.6 (primary) → Gemini 2.0 Flash (fallback)
 
 **System prompt** (source: [`src/outrich/ai/personalizer.py`](src/outrich/ai/personalizer.py)):
 

@@ -1,3 +1,4 @@
+import csv
 import json
 import sqlite3
 from datetime import datetime, timezone
@@ -50,9 +51,9 @@ def generate(settings: Settings, out_path: Path | None = None) -> Path:
         "",
         "Leads are selected by a quota system that reflects deliberate GTM thinking:",
         "",
-        f"- **{SEGMENT_QUOTAS['obvious_fit']} obvious_fit** — proven decision-makers at confirmed Cassandra/DataStax shops. Highest close probability.",
-        f"- **{SEGMENT_QUOTAS['high_potential_low_experience']} high_potential_low_experience** — junior engineers at the right companies. Lower authority today, but future champions who influence stack decisions as they grow.",
-        f"- **{SEGMENT_QUOTAS['wild_card']} wild_card** — non-obvious but strategically interesting: AI leaders who could become PMs, DevRel figures with community reach, infrastructure investors.",
+        f"- **{SEGMENT_QUOTAS['obvious_fit']} obvious_fit** — senior technical DataStax employees: engineers, architects, and engineering leaders working directly on Cassandra, DSE, or Astra DB. Highest value as recruits, ecosystem connectors, or converted advocates.",
+        f"- **{SEGMENT_QUOTAS['high_potential_low_experience']} high_potential_low_experience** — junior DataStax engineers on the right stack. Limited authority today, but they grow into senior roles and carry deep institutional knowledge of the competitive stack.",
+        f"- **{SEGMENT_QUOTAS['wild_card']} wild_card** — non-obvious but strategically interesting DataStax employees: Developer Advocates with Cassandra community reach, Technical PMs who know the product deeply, Principal Evangelists.",
         "",
         "The qualifier AI assigns each lead to a segment and scores them 0–100. Selection then picks the top-N per quota.",
         "",
@@ -133,4 +134,57 @@ def generate(settings: Settings, out_path: Path | None = None) -> Path:
     out_path = out_path or (settings.sample_run_dir / "report.md")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text("\n".join(lines))
+    generate_csv(settings)
+    return out_path
+
+
+def generate_csv(settings: Settings, out_path: Path | None = None) -> Path:
+    leads = store.get_qualified_leads(settings.db_path)
+    messages = store.get_all_messages(settings.db_path)
+
+    msg_by_lead: dict[int, dict] = {}
+    for m in messages:
+        lid = m["lead_id"]
+        if lid not in msg_by_lead:
+            msg_by_lead[lid] = {}
+        msg_by_lead[lid][m["channel"]] = m
+
+    selected_ids = set(msg_by_lead.keys())
+
+    fieldnames = [
+        "id", "full_name", "current_title", "current_company", "location",
+        "segment", "relevance_score", "reasoning", "scylla_angle", "pain_points",
+        "linkedin_invite", "linkedin_invite_chars", "email_subject", "email_body",
+        "selected",
+    ]
+
+    out_path = out_path or (settings.sample_run_dir / "results.csv")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(out_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for lead in leads:
+            lid = lead["id"]
+            msgs = msg_by_lead.get(lid, {})
+            invite = msgs.get("linkedin_invite")
+            email = msgs.get("follow_up_email")
+            writer.writerow({
+                "id": lid,
+                "full_name": lead["full_name"],
+                "current_title": lead["current_title"] or "",
+                "current_company": lead["current_company"] or "",
+                "location": lead["location"] or "",
+                "segment": lead["segment"],
+                "relevance_score": lead["relevance_score"],
+                "reasoning": lead["reasoning"],
+                "scylla_angle": lead["scylla_angle"],
+                "pain_points": "; ".join(json.loads(lead["pain_points"] or "[]")),
+                "linkedin_invite": invite["body"] if invite else "",
+                "linkedin_invite_chars": len(invite["body"]) if invite else "",
+                "email_subject": email["subject"] if email else "",
+                "email_body": email["body"] if email else "",
+                "selected": "yes" if lid in selected_ids else "no",
+            })
+
     return out_path

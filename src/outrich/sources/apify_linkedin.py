@@ -44,7 +44,8 @@ def discover(settings: Settings, use_cache: bool = True) -> list[RawProfile]:
     client = ApifyClient(settings.apify_token)
     run = client.actor(settings.apify_actor).call(
         run_input={
-            "keywords": '"DataStax" OR "Astra DB" OR "Apache Cassandra"',
+            "keywords": '"DataStax"',
+            "currentCompany": ["DataStax"],
             "currentJobTitles": _SEARCH_TITLES,
             "maxItems": settings.apify_limit,
         }

@@ -1,535 +1,1385 @@
 [
   {
-    "linkedin_url": "https://www.linkedin.com/in/marcus-chen-infra",
-    "full_name": "Marcus Chen",
-    "headline": "Staff Software Engineer · Cassandra Platform · Netflix",
-    "current_company": "Netflix",
-    "current_title": "Staff Software Engineer",
-    "location": "San Jose, CA",
-    "summary": "Building and scaling Netflix's Cassandra platform. Responsible for 300+ node clusters serving 100M+ daily active users. Currently migrating from DSE to open-source Cassandra while keeping latency SLOs tight. Previously at LinkedIn working on distributed storage.",
-    "skills": ["Apache Cassandra", "DataStax Enterprise", "Java", "Distributed Systems", "Storage Infrastructure", "Kubernetes"],
-    "past_roles": [{"title": "Senior Software Engineer", "company": "LinkedIn", "years": 3}],
-    "education": [{"school": "UC Berkeley", "degree": "B.S. Computer Science"}],
-    "years_experience": 9
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/sarah-okonkwo-db",
-    "full_name": "Sarah Okonkwo",
-    "headline": "Principal Database Architect · Uber · Distributed Data Systems",
-    "current_company": "Uber",
-    "current_title": "Principal Database Architect",
-    "location": "San Francisco, CA",
-    "summary": "Designing Uber's data infrastructure across rides, eats, and freight. Evaluate and operate DataStax Enterprise at scale — currently leading an initiative to reduce our Cassandra TCO by 40% after cloud costs spiraled. Speaker at Data+AI Summit 2023.",
-    "skills": ["DataStax Enterprise", "Apache Cassandra", "Apache Kafka", "Database Architecture", "CQL", "Python", "Go"],
-    "past_roles": [{"title": "Senior DBA", "company": "Twitter", "years": 4}],
-    "education": [{"school": "Carnegie Mellon", "degree": "M.S. Computer Science"}],
-    "years_experience": 12
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/dmitri-volkov-apple",
-    "full_name": "Dmitri Volkov",
-    "headline": "Senior Infrastructure Engineer · Storage Systems · Apple",
-    "current_company": "Apple",
-    "current_title": "Senior Infrastructure Engineer",
-    "location": "Cupertino, CA",
-    "summary": "Core infrastructure engineer on Apple's iCloud storage layer. Run one of the largest Cassandra deployments in the world. Focused on multi-DC replication and cross-region failover. Presented at Cassandra Summit 2022 on compaction strategies at petabyte scale.",
-    "skills": ["Apache Cassandra", "Distributed Storage", "Java", "C++", "Multi-DC Replication", "Linux"],
-    "past_roles": [{"title": "Software Engineer", "company": "Facebook", "years": 3}],
-    "education": [{"school": "Moscow State University", "degree": "M.S. Applied Math"}],
-    "years_experience": 10
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/priya-ramanujan-discord",
-    "full_name": "Priya Ramanujan",
-    "headline": "Engineering Manager, Data Infrastructure · Discord",
-    "current_company": "Discord",
-    "current_title": "Engineering Manager, Data Infrastructure",
-    "location": "San Francisco, CA",
-    "summary": "Leading Discord's data infrastructure team, which runs the Cassandra clusters that power message storage for 500M+ registered users. Drove our 2022 migration from DSE to open-source Cassandra. Currently battling tail latency issues at our scale — a constant challenge.",
-    "skills": ["Apache Cassandra", "Engineering Management", "Distributed Databases", "Python", "Go", "Kubernetes"],
-    "past_roles": [{"title": "Senior Data Engineer", "company": "Twitch", "years": 3}],
-    "education": [{"school": "IIT Madras", "degree": "B.Tech Computer Science"}],
+    "linkedin_url": "https://www.linkedin.com/in/elena-marchetti-eb66a2",
+    "full_name": "Elena Marchetti",
+    "headline": "Principal Engineer, Cassandra Core \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Principal Engineer, Cassandra Core",
+    "location": "Santa Clara, CA",
+    "summary": "Building the engine room of Apache Cassandra at DataStax for 8 years. Currently leading the storage engine modernization effort \u2014 trying to close the compaction and latency gaps that keep showing up in production war stories. Contributed 400+ commits to the Cassandra open-source project. Presented at Cassandra Summit 2023 on the limits of the current write path under high-concurrency workloads. I know this codebase better than anyone and I'm not shy about its rough edges.",
+    "skills": [
+      "Apache Cassandra",
+      "Java",
+      "C++",
+      "Distributed Storage",
+      "SSTable",
+      "Compaction",
+      "LSM Trees",
+      "Open Source"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Red Hat",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "Politecnico di Milano",
+        "degree": "M.S. Computer Engineering"
+      }
+    ],
     "years_experience": 11
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/james-whitfield-jpmc",
-    "full_name": "James Whitfield",
-    "headline": "Principal Data Engineer · Real-Time Analytics · JPMorgan Chase",
-    "current_company": "JPMorgan Chase",
-    "current_title": "Principal Data Engineer",
-    "location": "New York, NY",
-    "summary": "Building real-time risk analytics pipelines at JPMC. DataStax Enterprise is our production store for low-latency trade surveillance — we serve sub-10ms reads at 200k ops/sec. Currently evaluating alternatives as our DSE contract comes up for renewal.",
-    "skills": ["DataStax Enterprise", "Apache Kafka", "Apache Flink", "Java", "Python", "Risk Analytics"],
-    "past_roles": [{"title": "Data Engineer", "company": "Goldman Sachs", "years": 5}],
-    "education": [{"school": "Columbia University", "degree": "M.S. Financial Engineering"}],
-    "years_experience": 13
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/aisha-muhammad-ebay",
-    "full_name": "Aisha Muhammad",
-    "headline": "Staff Engineer · Distributed Databases · eBay",
-    "current_company": "eBay",
-    "current_title": "Staff Engineer",
-    "location": "San Jose, CA",
-    "summary": "Platform engineer on eBay's distributed storage team. Own the Cassandra-based infrastructure that powers product catalog, recommendations, and inventory. Responsible for capacity planning and reliability for 1.5B listings. Vocal about Cassandra's operational burden on Twitter.",
-    "skills": ["Apache Cassandra", "Distributed Systems", "Java", "Capacity Planning", "SRE", "NoSQL"],
-    "past_roles": [{"title": "Senior Software Engineer", "company": "PayPal", "years": 4}],
-    "education": [{"school": "University of Texas Austin", "degree": "B.S. Computer Science"}],
-    "years_experience": 10
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/carlos-herrera-arch",
-    "full_name": "Carlos Herrera",
-    "headline": "Solutions Architect · Apache Cassandra · Apache Kafka · FinTech",
-    "current_company": "Nubank",
-    "current_title": "Senior Solutions Architect",
-    "location": "São Paulo, Brazil",
-    "summary": "Designing Nubank's data infrastructure for 90M+ customers. We run Cassandra for transaction history and fraud signals — latency and throughput are existential concerns at our scale. Author of several internal runbooks on Cassandra tuning published on our eng blog.",
-    "skills": ["Apache Cassandra", "Apache Kafka", "Solutions Architecture", "FinTech", "Scala", "Java"],
-    "past_roles": [{"title": "Data Architect", "company": "Itaú Unibanco", "years": 4}],
-    "education": [{"school": "USP", "degree": "B.S. Computer Engineering"}],
-    "years_experience": 11
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/tom-bergkamp-booking",
-    "full_name": "Tom Bergkamp",
-    "headline": "Database Reliability Engineer · Apache Cassandra · Booking.com",
-    "current_company": "Booking.com",
-    "current_title": "Database Reliability Engineer",
-    "location": "Amsterdam, Netherlands",
-    "summary": "DRE at Booking.com owning our Cassandra fleet — 400+ nodes across 5 DCs. Focused on reducing MTTR, compaction overhead, and cross-region latency. Have been pushing internally to benchmark Scylla after reading their engineering blog. Cassandra Summit regular.",
-    "skills": ["Apache Cassandra", "Database Reliability", "Python", "Ansible", "Prometheus", "Grafana"],
-    "past_roles": [{"title": "Systems Engineer", "company": "Adyen", "years": 3}],
-    "education": [{"school": "TU Delft", "degree": "B.Sc. Computer Science"}],
-    "years_experience": 8
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/yuki-tanaka-doordash",
-    "full_name": "Yuki Tanaka",
-    "headline": "Principal Engineer · Data Infrastructure · DoorDash",
-    "current_company": "DoorDash",
-    "current_title": "Principal Engineer",
-    "location": "San Francisco, CA",
-    "summary": "Leading data infrastructure at DoorDash — Cassandra backs our order management and driver location systems. Obsessed with P99 latency. Wrote about our 2023 Cassandra incident on the DoorDash Engineering Blog. Currently exploring options to reduce our cloud spend.",
-    "skills": ["Apache Cassandra", "Distributed Systems", "Go", "Kubernetes", "Data Infrastructure"],
-    "past_roles": [{"title": "Senior Engineer", "company": "Square", "years": 3}],
-    "education": [{"school": "Keio University", "degree": "B.E. Information Engineering"}],
-    "years_experience": 10
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/rachel-sterling-github",
-    "full_name": "Rachel Sterling",
-    "headline": "Staff Engineer · Storage Infrastructure · GitHub",
-    "current_company": "GitHub",
-    "current_title": "Staff Engineer",
-    "location": "San Francisco, CA",
-    "summary": "Storage infrastructure at GitHub — we use Cassandra for metadata and audit log storage. Presenter at QCon 2023: 'Lessons from 5 years of Cassandra in production'. Focused on reducing write amplification and lowering p99 read latency across our fleet.",
-    "skills": ["Apache Cassandra", "Ruby", "Go", "MySQL", "Storage Systems", "Distributed Systems"],
-    "past_roles": [{"title": "Senior Engineer", "company": "Heroku", "years": 4}],
-    "education": [{"school": "University of Washington", "degree": "B.S. Computer Science"}],
-    "years_experience": 12
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/alex-konstantopoulos-sre",
-    "full_name": "Alex Konstantopoulos",
-    "headline": "Senior Site Reliability Engineer · Distributed Systems · Comcast",
-    "current_company": "Comcast",
-    "current_title": "Senior Site Reliability Engineer",
-    "location": "Philadelphia, PA",
-    "summary": "SRE for Comcast's video streaming platform data layer. We run DSE for subscriber state and entitlements — 150M subscribers, strict latency SLAs. Vocal advocate for cost reduction after recent cloud cost audit showed DSE licensing at 3x projected.",
-    "skills": ["DataStax Enterprise", "SRE", "Kubernetes", "Terraform", "Python", "Observability"],
-    "past_roles": [{"title": "Systems Engineer", "company": "Verizon", "years": 3}],
-    "education": [{"school": "Penn State", "degree": "B.S. Information Technology"}],
+    "linkedin_url": "https://www.linkedin.com/in/kwame-asante-0f2ef7",
+    "full_name": "Kwame Asante",
+    "headline": "Staff Engineer, Astra DB \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Staff Engineer, Astra DB",
+    "location": "Austin, TX",
+    "summary": "Seven years at DataStax, the last four focused entirely on Astra DB's multi-region replication layer. Designed the cross-region consistency protocol that handles 2M+ writes/sec in production. Currently wrestling with the cost-per-query model that customers complain about at scale. I've watched the gap between what Astra DB promises and what actually lands in production \u2014 and I have strong opinions about where the next architectural bets need to go.",
+    "skills": [
+      "Astra DB",
+      "Apache Cassandra",
+      "Java",
+      "Distributed Replication",
+      "Cloud-Native Databases",
+      "Kubernetes",
+      "gRPC"
+    ],
+    "past_roles": [
+      {
+        "title": "Software Engineer",
+        "company": "Datastax (acquired)",
+        "years": 2
+      },
+      {
+        "title": "Backend Engineer",
+        "company": "Rackspace",
+        "years": 2
+      }
+    ],
+    "education": [
+      {
+        "school": "Georgia Tech",
+        "degree": "B.S. Computer Science"
+      }
+    ],
     "years_experience": 9
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/nneka-okafor-jpmc",
-    "full_name": "Nneka Okafor",
-    "headline": "Principal Data Architect · Real-Time Analytics · JPMorgan Chase",
-    "current_company": "JPMorgan Chase",
-    "current_title": "Principal Data Architect",
+    "linkedin_url": "https://www.linkedin.com/in/priya-nair-c4cf89",
+    "full_name": "Priya Nair",
+    "headline": "Director of Engineering, DSE Platform \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Director of Engineering, DSE Platform",
     "location": "New York, NY",
-    "summary": "Architect for real-time data systems at JPMC's CIB division. Cassandra and DataStax are core to our market data and order-routing infrastructure. Evaluating database options as part of 2024 platform modernization — cost, latency, and operational complexity all in scope.",
-    "skills": ["DataStax Enterprise", "Apache Cassandra", "Data Architecture", "Apache Kafka", "SQL", "Python"],
-    "past_roles": [{"title": "Senior Data Engineer", "company": "Morgan Stanley", "years": 6}],
-    "education": [{"school": "University of Lagos", "degree": "B.Sc. Computer Science"}, {"school": "NYU Stern", "degree": "MBA"}],
-    "years_experience": 15
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/jake-morrison-netflix",
-    "full_name": "Jake Morrison",
-    "headline": "Software Engineer II · Cassandra Platform · Netflix",
-    "current_company": "Netflix",
-    "current_title": "Software Engineer II",
-    "location": "Los Gatos, CA",
-    "summary": "Part of Netflix's Cassandra platform team — contributing to tooling, schema management, and capacity automation. Two years in, deep-diving on Cassandra internals. Wrote an internal tech talk on SSTable compaction strategies. Actively growing toward senior.",
-    "skills": ["Apache Cassandra", "Java", "Python", "Distributed Systems", "Kubernetes"],
-    "past_roles": [{"title": "Software Engineering Intern", "company": "Netflix", "years": 0}],
-    "education": [{"school": "Stanford University", "degree": "B.S. Computer Science"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/mei-lin-wang-spotify",
-    "full_name": "Mei Lin Wang",
-    "headline": "Data Engineer · Apache Cassandra · Spotify",
-    "current_company": "Spotify",
-    "current_title": "Data Engineer",
-    "location": "Stockholm, Sweden",
-    "summary": "Data engineer on Spotify's infrastructure data team, working with Cassandra for playlist and user preference storage. 1.5 years at Spotify, learning the ins and outs of production Cassandra at scale. Contributed to internal Cassandra documentation and on-call runbooks.",
-    "skills": ["Apache Cassandra", "Python", "Apache Kafka", "Scala", "dbt"],
-    "past_roles": [{"title": "Data Engineering Intern", "company": "Klarna", "years": 0}],
-    "education": [{"school": "KTH Royal Institute of Technology", "degree": "M.Sc. Data Science"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/ravi-patel-backend",
-    "full_name": "Ravi Patel",
-    "headline": "Software Engineer · Backend Systems · Swiggy",
-    "current_company": "Swiggy",
-    "current_title": "Software Engineer",
-    "location": "Bengaluru, India",
-    "summary": "Backend engineer at Swiggy working on the order management service — recently migrated from MySQL to Cassandra for scale. Two years in, becoming the team's go-to for Cassandra questions. Presented at an internal engineering all-hands on our data model design.",
-    "skills": ["Apache Cassandra", "Java", "Spring Boot", "MySQL", "Redis"],
-    "past_roles": [{"title": "Software Engineer Intern", "company": "Infosys", "years": 0}],
-    "education": [{"school": "BITS Pilani", "degree": "B.E. Computer Science"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/anastasia-kowalski-booking",
-    "full_name": "Anastasia Kowalski",
-    "headline": "Data Engineer · Distributed Systems · Booking.com",
-    "current_company": "Booking.com",
-    "current_title": "Data Engineer",
-    "location": "Amsterdam, Netherlands",
-    "summary": "Data engineer at Booking.com's data platform team, gaining Cassandra experience through our large-scale deployment. Three years in, focused on data pipeline reliability and schema evolution. Active participant in the Cassandra Users Slack community.",
-    "skills": ["Apache Cassandra", "Python", "Apache Spark", "Airflow", "SQL"],
-    "past_roles": [{"title": "Junior Data Analyst", "company": "ING Bank", "years": 1}],
-    "education": [{"school": "University of Warsaw", "degree": "M.Sc. Computer Science"}],
-    "years_experience": 3
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/devon-williams-gaming",
-    "full_name": "Devon Williams",
-    "headline": "Backend Engineer · Game Infrastructure · Riot Games",
-    "current_company": "Riot Games",
-    "current_title": "Backend Engineer",
-    "location": "Los Angeles, CA",
-    "summary": "Backend engineer on Riot Games' infrastructure team, building leaderboard and player-state services backed by Cassandra. Two years in and already owning significant production Cassandra surfaces. Starting to feel the pain of Cassandra at gaming scale — latency spikes during peak events.",
-    "skills": ["Apache Cassandra", "Go", "Python", "Kubernetes", "Redis", "gRPC"],
-    "past_roles": [{"title": "Software Engineering Intern", "company": "EA", "years": 0}],
-    "education": [{"school": "UCLA", "degree": "B.S. Computer Science"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/fatima-al-rashidi-discord",
-    "full_name": "Fatima Al-Rashidi",
-    "headline": "Site Reliability Engineer · Discord · Infrastructure",
-    "current_company": "Discord",
-    "current_title": "Site Reliability Engineer",
-    "location": "Remote",
-    "summary": "SRE at Discord, joining the team that owns Cassandra availability and performance. One year in, working on-call rotations and runbooks for our message-storage Cassandra fleet. Learning fast in a high-stakes environment — Discord's Cassandra is one of the most-watched in the industry.",
-    "skills": ["Apache Cassandra", "Python", "Prometheus", "Grafana", "Kubernetes", "SRE"],
-    "past_roles": [{"title": "DevOps Engineer", "company": "Canonical", "years": 1}],
-    "education": [{"school": "American University of Beirut", "degree": "B.E. Computer Engineering"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/lucas-brennan-lyft",
-    "full_name": "Lucas Brennan",
-    "headline": "Software Engineer · Data Infrastructure · Lyft",
-    "current_company": "Lyft",
-    "current_title": "Software Engineer",
-    "location": "San Francisco, CA",
-    "summary": "Rotating through Lyft's data infrastructure team, currently focused on our Cassandra cluster that backs driver and rider matching state. Two years at Lyft. Interested in distributed systems and growing toward infrastructure specialization.",
-    "skills": ["Apache Cassandra", "Python", "Apache Kafka", "Kubernetes", "Java"],
-    "past_roles": [{"title": "Software Engineering Intern", "company": "Lyft", "years": 0}],
-    "education": [{"school": "University of Michigan", "degree": "B.S. Computer Science"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/sophie-park-ebay",
-    "full_name": "Sophie Park",
-    "headline": "Junior Data Engineer · eBay · Platform",
-    "current_company": "eBay",
-    "current_title": "Junior Data Engineer",
-    "location": "San Jose, CA",
-    "summary": "First engineering job at eBay's data platform team, working alongside Staff Engineers on the Cassandra infrastructure that powers product catalog. One year in, focused on observability tooling and data quality checks. Curious and learning fast.",
-    "skills": ["Apache Cassandra", "Python", "SQL", "Apache Airflow", "Grafana"],
-    "past_roles": [],
-    "education": [{"school": "UC San Diego", "degree": "B.S. Data Science"}],
-    "years_experience": 1
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/isaac-mensah-fintech",
-    "full_name": "Isaac Mensah",
-    "headline": "Backend Engineer · Distributed Systems · Paystack",
-    "current_company": "Paystack",
-    "current_title": "Backend Engineer",
-    "location": "Lagos, Nigeria",
-    "summary": "Backend engineer at Paystack (Stripe subsidiary) building payment infrastructure on Cassandra for low-latency transaction processing across Africa. 1.5 years in — getting deep on data modeling and replication strategies. Active on the Apache Cassandra mailing list.",
-    "skills": ["Apache Cassandra", "Node.js", "Go", "PostgreSQL", "Redis", "Distributed Systems"],
-    "past_roles": [],
-    "education": [{"school": "University of Ghana", "degree": "B.Sc. Computer Science"}],
-    "years_experience": 2
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/rebecca-torres-paypal",
-    "full_name": "Dr. Rebecca Torres",
-    "headline": "Director of AI/ML Engineering · PayPal · Real-Time Decisioning",
-    "current_company": "PayPal",
-    "current_title": "Director of AI/ML Engineering",
-    "location": "San Jose, CA",
-    "summary": "Leading PayPal's real-time ML decisioning platform — fraud, risk, and personalization models that depend on sub-5ms feature lookups from our Cassandra feature store. Deeply interested in the intersection of AI infrastructure and data systems. Keynoted at AI Infrastructure Summit 2024. Exploring what the next chapter of her career looks like — PM or product-adjacent roles are on the table.",
-    "skills": ["Machine Learning", "Apache Cassandra", "Feature Stores", "Python", "MLOps", "Real-Time Inference"],
-    "past_roles": [{"title": "Principal ML Engineer", "company": "Visa", "years": 4}],
-    "education": [{"school": "MIT", "degree": "Ph.D. Computer Science"}],
-    "years_experience": 14
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/michael-osei-devrel",
-    "full_name": "Michael Osei",
-    "headline": "Head of Developer Relations · HashiCorp",
-    "current_company": "HashiCorp",
-    "current_title": "Head of Developer Relations",
-    "location": "Remote",
-    "summary": "Running developer relations at HashiCorp — deep relationships with infrastructure engineers across the industry. Previously an SRE who ran Cassandra clusters at scale. Hosts 'Infrastructure Conversations' podcast. Influential in the NoSQL community; regularly featured at DataStax Accelerate and Cassandra Summit.",
-    "skills": ["Developer Relations", "Apache Cassandra", "Terraform", "Infrastructure", "Community Building", "Public Speaking"],
-    "past_roles": [{"title": "Senior SRE", "company": "Cloudflare", "years": 4}],
-    "education": [{"school": "University of Ghana", "degree": "B.Sc. Computer Engineering"}],
+    "summary": "Leading the DataStax Enterprise platform engineering org \u2014 35 engineers across storage, query, and search. Prior to this role I was a Principal Engineer on the DSE search integration (Solr-on-Cassandra). I've been managing the painful reality of keeping DSE customers happy while the company transitions investment toward Astra DB. The tension between enterprise DSE commitments and cloud-native product strategy is real and I navigate it every quarter.",
+    "skills": [
+      "DataStax Enterprise",
+      "Apache Cassandra",
+      "Engineering Management",
+      "Distributed Systems",
+      "Apache Solr",
+      "Java",
+      "Team Leadership"
+    ],
+    "past_roles": [
+      {
+        "title": "Principal Engineer",
+        "company": "DataStax",
+        "years": 4
+      },
+      {
+        "title": "Senior Software Engineer",
+        "company": "Palantir",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Bombay",
+        "degree": "B.Tech Computer Science"
+      },
+      {
+        "school": "Stanford University",
+        "degree": "M.S. Computer Science"
+      }
+    ],
     "years_experience": 13
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/amanda-zhang-sequoia",
-    "full_name": "Amanda Zhang",
-    "headline": "General Partner · Sequoia Capital · Infrastructure & Developer Tools",
-    "current_company": "Sequoia Capital",
-    "current_title": "General Partner",
-    "location": "Menlo Park, CA",
-    "summary": "Infrastructure and developer tools investor at Sequoia. Portfolio includes database, observability, and data infrastructure companies. Previously a software engineer at Google and early engineer at Databricks. Frequently writes about the database market consolidation and the shift away from expensive legacy vendors.",
-    "skills": ["Venture Capital", "Database Infrastructure", "Developer Tools", "B2B SaaS", "Data Infrastructure"],
-    "past_roles": [{"title": "Early Engineer", "company": "Databricks", "years": 3}, {"title": "Software Engineer", "company": "Google", "years": 4}],
-    "education": [{"school": "Harvard", "degree": "B.A. Applied Math"}, {"school": "Stanford GSB", "degree": "MBA"}],
-    "years_experience": 18
+    "linkedin_url": "https://www.linkedin.com/in/rodrigo-santana-cb71fb",
+    "full_name": "Rodrigo Santana",
+    "headline": "Principal Solutions Architect \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Principal Solutions Architect",
+    "location": "Miami, FL",
+    "summary": "Customer-facing principal SA at DataStax for 6 years, helping Fortune 500 companies design and troubleshoot their Cassandra and Astra DB deployments. I've done data model reviews for banks, telcos, and retail at extreme scale. I see where customers hit walls with Cassandra's data modeling constraints and latency tail issues firsthand \u2014 it's a recurring theme. Presented 'Cassandra Anti-Patterns in Production' at ApacheCon 2022.",
+    "skills": [
+      "Apache Cassandra",
+      "Astra DB",
+      "Data Modeling",
+      "Solutions Architecture",
+      "CQL",
+      "Capacity Planning",
+      "Java",
+      "Python"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior DBA",
+        "company": "Accenture",
+        "years": 4
+      },
+      {
+        "title": "Database Consultant",
+        "company": "IBM",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "University of S\u00e3o Paulo",
+        "degree": "B.S. Information Systems"
+      }
+    ],
+    "years_experience": 13
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/david-kim-vp-eng",
-    "full_name": "David Kim",
-    "headline": "VP of Engineering · Platform · Instacart",
-    "current_company": "Instacart",
-    "current_title": "VP of Engineering",
+    "linkedin_url": "https://www.linkedin.com/in/mei-zhang-b83034",
+    "full_name": "Mei Zhang",
+    "headline": "VP Engineering, Astra DB \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "VP Engineering, Astra DB",
     "location": "San Francisco, CA",
-    "summary": "Running platform engineering at Instacart — responsible for the data infrastructure that processes 700M+ orders. DataStax Enterprise is in our critical path for catalog and fulfillment. Evaluating 2024 infrastructure spend and actively looking for ways to reduce database costs without sacrificing SLAs.",
-    "skills": ["Engineering Leadership", "DataStax Enterprise", "Platform Engineering", "Distributed Systems", "Cost Optimization"],
-    "past_roles": [{"title": "Senior Director Engineering", "company": "DoorDash", "years": 3}],
-    "education": [{"school": "KAIST", "degree": "B.S. Computer Science"}],
+    "summary": "VP Engineering for Astra DB at DataStax, overseeing 80+ engineers across the managed Cassandra cloud product. Joined DataStax 5 years ago as an engineering manager after 4 years as a staff engineer at Google Bigtable. I track everything: query latency distributions, SLA breach rates, cost per GB. Our biggest internal debate right now is whether to continue investing in Cassandra compatibility or to differentiate the storage layer \u2014 the pressure from hyperscaler databases is real.",
+    "skills": [
+      "Engineering Leadership",
+      "Astra DB",
+      "Apache Cassandra",
+      "Cloud Databases",
+      "Distributed Systems",
+      "Product Strategy",
+      "OKRs"
+    ],
+    "past_roles": [
+      {
+        "title": "Staff Software Engineer",
+        "company": "Google",
+        "years": 4
+      },
+      {
+        "title": "Engineering Manager",
+        "company": "DataStax",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "Peking University",
+        "degree": "B.S. Computer Science"
+      },
+      {
+        "school": "MIT",
+        "degree": "M.S. Computer Science"
+      }
+    ],
     "years_experience": 16
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/omar-hassan-devadvocate",
-    "full_name": "Omar Hassan",
-    "headline": "Principal Developer Advocate · MongoDB",
-    "current_company": "MongoDB",
-    "current_title": "Principal Developer Advocate",
-    "location": "Remote",
-    "summary": "Developer advocate at MongoDB with deep roots in the Cassandra community — spent 5 years running Cassandra before moving to MongoDB advocacy. Still active in Apache Cassandra PMC discussions and occasionally speaks at Cassandra Summit. Has a large audience of infrastructure engineers who trust his technical opinions.",
-    "skills": ["MongoDB", "Apache Cassandra", "Developer Relations", "NoSQL", "Public Speaking", "Open Source"],
-    "past_roles": [{"title": "Senior Engineer", "company": "DataStax", "years": 3}],
-    "education": [{"school": "University of Cairo", "degree": "B.Sc. Computer Engineering"}],
+    "linkedin_url": "https://www.linkedin.com/in/tobias-gruber-161f0d",
+    "full_name": "Tobias Gruber",
+    "headline": "Staff SRE, Cassandra Infrastructure \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Staff SRE, Cassandra Infrastructure",
+    "location": "Berlin, Germany",
+    "summary": "Running the infrastructure that keeps DataStax's managed Cassandra clusters alive globally. Deep in nodetool, repair scheduling, and compaction tuning every week. I wrote DataStax's internal runbook for recovering from split-brain scenarios \u2014 it's been triggered 11 times in production. The operational complexity of large Cassandra deployments is something I've lived with for 7 years and I have very concrete opinions about what's hard versus what should be easier.",
+    "skills": [
+      "Apache Cassandra",
+      "Site Reliability Engineering",
+      "Kubernetes",
+      "Prometheus",
+      "Grafana",
+      "nodetool",
+      "JVM Tuning",
+      "Linux"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior SRE",
+        "company": "SoundCloud",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "TU Berlin",
+        "degree": "M.S. Computer Engineering"
+      }
+    ],
+    "years_experience": 10
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/aisha-campbell-49e8fa",
+    "full_name": "Aisha Campbell",
+    "headline": "Engineering Manager, Query Engine \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Engineering Manager, Query Engine",
+    "location": "Atlanta, GA",
+    "summary": "Managing the 12-person query engine team at DataStax, responsible for CQL execution, the native protocol, and the driver ecosystem. Previously a principal engineer on the same team for 4 years \u2014 I still write code. My team owns the part of the stack that most developers blame when Cassandra feels slow. We know the p99 latency issues from the inside and have a long backlog of architectural improvements that never get prioritized over feature work.",
+    "skills": [
+      "Apache Cassandra",
+      "CQL",
+      "Java",
+      "Query Optimization",
+      "Engineering Management",
+      "Driver Development",
+      "Protocol Design"
+    ],
+    "past_roles": [
+      {
+        "title": "Principal Software Engineer",
+        "company": "DataStax",
+        "years": 4
+      },
+      {
+        "title": "Senior Engineer",
+        "company": "Datastax (Stargate team)",
+        "years": 2
+      }
+    ],
+    "education": [
+      {
+        "school": "Spelman College",
+        "degree": "B.S. Computer Science"
+      },
+      {
+        "school": "Carnegie Mellon",
+        "degree": "M.S. Software Engineering"
+      }
+    ],
+    "years_experience": 12
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/felix-oduya-c67b51",
+    "full_name": "Felix Oduya",
+    "headline": "Principal Engineer, DSE Security & Compliance \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Principal Engineer, DSE Security & Compliance",
+    "location": "London, UK",
+    "summary": "Leading security architecture for DataStax Enterprise, including row-level security, audit logging, and FIPS compliance for regulated industries. I've been at DataStax 9 years and was part of the original DSE encryption implementation. The customers I work with \u2014 financial services, healthcare \u2014 run DSE at massive scale and have very specific performance-vs-security tradeoff conversations that I facilitate. TLS overhead at high write throughput is a recurring nightmare.",
+    "skills": [
+      "DataStax Enterprise",
+      "Database Security",
+      "FIPS 140-2",
+      "Kerberos",
+      "TLS",
+      "Audit Logging",
+      "Java",
+      "Cryptography"
+    ],
+    "past_roles": [
+      {
+        "title": "Security Engineer",
+        "company": "BAE Systems",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Edinburgh",
+        "degree": "M.S. Information Security"
+      }
+    ],
+    "years_experience": 12
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/soren-lindqvist-f766a5",
+    "full_name": "S\u00f8ren Lindqvist",
+    "headline": "Head of Platform Engineering \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Head of Platform Engineering",
+    "location": "Copenhagen, Denmark",
+    "summary": "Running DataStax's internal platform engineering \u2014 CI/CD, build infrastructure, and the tooling that 400+ engineers depend on. Been at DataStax for 5 years; before that I led infrastructure engineering at a DSE-based fintech. My team is responsible for ensuring every release of Astra DB and DSE ships with performance regressions caught before customers see them. I built our benchmark harness from scratch and I know exactly which Cassandra workloads are hardest to test at scale.",
+    "skills": [
+      "Platform Engineering",
+      "CI/CD",
+      "Benchmark Automation",
+      "Apache Cassandra",
+      "Kubernetes",
+      "Terraform",
+      "Go",
+      "Python"
+    ],
+    "past_roles": [
+      {
+        "title": "Infrastructure Lead",
+        "company": "Lunar (fintech)",
+        "years": 4
+      }
+    ],
+    "education": [
+      {
+        "school": "Technical University of Denmark",
+        "degree": "M.S. Computer Science"
+      }
+    ],
+    "years_experience": 11
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/naomi-watkins-002e8c",
+    "full_name": "Naomi Watkins",
+    "headline": "Principal Architect, Data Platform \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Principal Architect, Data Platform",
+    "location": "Chicago, IL",
+    "summary": "Principal architect at DataStax focused on the intersection of streaming data and Cassandra \u2014 specifically how Kafka and Pulsar-based workloads land into Astra DB. Have been designing these pipelines with enterprise customers for 6 years. The gap between raw Cassandra throughput and what you can actually sustain with realistic write amplification is something I explain to enterprise customers on a weekly basis. Keynoted Cassandra Forward 2022 on real-time data architecture.",
+    "skills": [
+      "Apache Cassandra",
+      "Apache Kafka",
+      "Apache Pulsar",
+      "Astra DB",
+      "Data Architecture",
+      "Streaming",
+      "Java",
+      "Python"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior Data Architect",
+        "company": "Capital One",
+        "years": 5
+      }
+    ],
+    "education": [
+      {
+        "school": "Northwestern University",
+        "degree": "M.S. Computer Engineering"
+      }
+    ],
     "years_experience": 14
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/jessica-brown-frontend",
-    "full_name": "Jessica Brown",
-    "headline": "Senior Frontend Engineer · Consumer Products · Netflix",
-    "current_company": "Netflix",
-    "current_title": "Senior Frontend Engineer",
-    "location": "Los Angeles, CA",
-    "summary": "Building Netflix's consumer-facing UI with React and TypeScript. Passionate about design systems, accessibility, and performance. No involvement in backend or data infrastructure.",
-    "skills": ["React", "TypeScript", "CSS", "A/B Testing", "Design Systems", "JavaScript"],
-    "past_roles": [{"title": "Frontend Engineer", "company": "Hulu", "years": 3}],
-    "education": [{"school": "USC", "degree": "B.S. Computer Science"}],
-    "years_experience": 7
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/paulo-souza-design",
-    "full_name": "Paulo Souza",
-    "headline": "Product Designer · Mobile · Spotify",
-    "current_company": "Spotify",
-    "current_title": "Product Designer",
-    "location": "São Paulo, Brazil",
-    "summary": "UX and product design for Spotify's mobile app — focused on the listening experience and home feed. Background in graphic design and HCI research. No connection to data infrastructure or databases.",
-    "skills": ["Figma", "User Research", "Prototyping", "iOS Design", "Design Systems"],
-    "past_roles": [{"title": "UX Designer", "company": "Nubank", "years": 2}],
-    "education": [{"school": "ESPM", "degree": "B.A. Design"}],
-    "years_experience": 6
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/linda-zhao-pm",
-    "full_name": "Linda Zhao",
-    "headline": "Senior Product Manager · Consumer Growth · Airbnb",
-    "current_company": "Airbnb",
-    "current_title": "Senior Product Manager",
-    "location": "San Francisco, CA",
-    "summary": "Product manager at Airbnb leading the guest discovery and recommendations experience. Background in growth PM at consumer apps. Focused on conversion and engagement metrics — no involvement in infrastructure or data systems.",
-    "skills": ["Product Management", "A/B Testing", "SQL", "Growth", "Roadmapping", "Analytics"],
-    "past_roles": [{"title": "Product Manager", "company": "Pinterest", "years": 3}],
-    "education": [{"school": "UC Berkeley Haas", "degree": "B.S. Business"}],
-    "years_experience": 8
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/mohammed-al-farsi-ios",
-    "full_name": "Mohammed Al-Farsi",
-    "headline": "iOS Developer · Social Apps · Snapchat",
-    "current_company": "Snapchat",
-    "current_title": "iOS Developer",
-    "location": "Dubai, UAE",
-    "summary": "iOS engineer at Snapchat building Stories and Spotlight features. Swift, SwiftUI, and ARKit are my main tools. Not involved in backend data infrastructure decisions.",
-    "skills": ["Swift", "SwiftUI", "ARKit", "iOS", "Objective-C", "Xcode"],
-    "past_roles": [{"title": "iOS Developer", "company": "Careem", "years": 2}],
-    "education": [{"school": "UAE University", "degree": "B.Sc. Computer Science"}],
-    "years_experience": 5
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/emma-wilson-marketing",
-    "full_name": "Emma Wilson",
-    "headline": "Senior Marketing Manager · B2B SaaS · Salesforce",
-    "current_company": "Salesforce",
-    "current_title": "Senior Marketing Manager",
-    "location": "London, UK",
-    "summary": "B2B demand generation and content marketing at Salesforce. Background in SaaS marketing, campaigns, and pipeline attribution. No technical background in databases or infrastructure.",
-    "skills": ["Demand Generation", "Content Marketing", "HubSpot", "Marketo", "Pipeline Analytics", "B2B Marketing"],
-    "past_roles": [{"title": "Marketing Manager", "company": "HubSpot", "years": 3}],
-    "education": [{"school": "University of Edinburgh", "degree": "B.A. Marketing"}],
-    "years_experience": 9
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/raj-kumar-django",
-    "full_name": "Raj Kumar",
-    "headline": "Backend Engineer · Django · PostgreSQL · Razorpay",
-    "current_company": "Razorpay",
-    "current_title": "Backend Engineer",
-    "location": "Hyderabad, India",
-    "summary": "Backend engineer at Razorpay working on payment API services. Our stack is Django + PostgreSQL + Redis — no Cassandra or distributed NoSQL in sight. Comfortable with relational databases and REST APIs.",
-    "skills": ["Django", "PostgreSQL", "Redis", "Python", "REST APIs", "AWS"],
-    "past_roles": [{"title": "Junior Developer", "company": "Infosys", "years": 2}],
-    "education": [{"school": "JNTU", "degree": "B.Tech Computer Science"}],
-    "years_experience": 4
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/chris-taylor-devops",
-    "full_name": "Chris Taylor",
-    "headline": "DevOps Engineer · Kubernetes · Redis · PostgreSQL · Grubhub",
-    "current_company": "Grubhub",
-    "current_title": "DevOps Engineer",
-    "location": "Chicago, IL",
-    "summary": "DevOps engineer at Grubhub managing Kubernetes clusters, CI/CD pipelines, and our PostgreSQL and Redis infrastructure. No experience with Cassandra or column-family databases in our current stack.",
-    "skills": ["Kubernetes", "Redis", "PostgreSQL", "Terraform", "CI/CD", "Docker"],
-    "past_roles": [{"title": "Systems Admin", "company": "Morningstar", "years": 3}],
-    "education": [{"school": "Illinois State University", "degree": "B.S. Information Technology"}],
-    "years_experience": 6
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/yara-nasser-datascience",
-    "full_name": "Yara Nasser",
-    "headline": "Senior Data Scientist · ML · Computer Vision · Careem",
-    "current_company": "Careem",
-    "current_title": "Senior Data Scientist",
-    "location": "Cairo, Egypt",
-    "summary": "ML engineer and data scientist at Careem working on demand forecasting and route optimization. Our work is Python, PyTorch, and Spark — the data infra team handles the databases. No involvement in Cassandra or NoSQL infrastructure decisions.",
-    "skills": ["Machine Learning", "PyTorch", "Python", "Apache Spark", "Computer Vision", "Statistics"],
-    "past_roles": [{"title": "ML Engineer", "company": "Noon", "years": 2}],
-    "education": [{"school": "Cairo University", "degree": "M.Sc. Computer Science"}],
-    "years_experience": 7
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/ben-foster-oracle-sales",
-    "full_name": "Ben Foster",
-    "headline": "Senior Account Executive · Oracle · Enterprise Database Sales",
-    "current_company": "Oracle",
-    "current_title": "Senior Account Executive",
-    "location": "New York, NY",
-    "summary": "Enterprise database sales at Oracle, covering financial services accounts on the East Coast. Focused on Oracle DB and Exadata deals — no technical background in distributed systems or NoSQL.",
-    "skills": ["Enterprise Sales", "Oracle Database", "CRM", "Salesforce", "Account Management"],
-    "past_roles": [{"title": "Account Executive", "company": "SAP", "years": 3}],
-    "education": [{"school": "Fordham University", "degree": "B.S. Business Administration"}],
-    "years_experience": 10
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/lisa-kamara-hr",
-    "full_name": "Lisa Kamara",
-    "headline": "HR Business Partner · Tech Industry · Meta",
-    "current_company": "Meta",
-    "current_title": "HR Business Partner",
-    "location": "San Francisco, CA",
-    "summary": "HRBP at Meta supporting engineering orgs. Focused on talent management, performance cycles, and org design. No technical background in software or databases.",
-    "skills": ["Human Resources", "Talent Management", "Workday", "Org Design", "Performance Management"],
-    "past_roles": [{"title": "HR Generalist", "company": "Twitter", "years": 3}],
-    "education": [{"school": "Howard University", "degree": "B.A. Psychology"}],
-    "years_experience": 9
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/noah-schmidt-react",
-    "full_name": "Noah Schmidt",
-    "headline": "React Developer · TypeScript · Next.js · Zalando",
-    "current_company": "Zalando",
-    "current_title": "React Developer",
-    "location": "Berlin, Germany",
-    "summary": "Frontend developer at Zalando building the product browsing and checkout experience. TypeScript, React, Next.js, GraphQL — entirely frontend-focused. No involvement in backend infrastructure or databases.",
-    "skills": ["React", "TypeScript", "Next.js", "GraphQL", "CSS", "Webpack"],
-    "past_roles": [{"title": "Junior Frontend Developer", "company": "SoundCloud", "years": 2}],
-    "education": [{"school": "TU Berlin", "degree": "B.Sc. Computer Science"}],
-    "years_experience": 5
-  },
-  {
-    "linkedin_url": "https://www.linkedin.com/in/isabella-conti-techwriter",
-    "full_name": "Isabella Conti",
-    "headline": "Technical Writer · AWS Documentation · Amazon",
-    "current_company": "Amazon Web Services",
-    "current_title": "Technical Writer",
+    "linkedin_url": "https://www.linkedin.com/in/victor-park-acb8bf",
+    "full_name": "Victor Park",
+    "headline": "Staff Engineer, Stargate API Gateway \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Staff Engineer, Stargate API Gateway",
     "location": "Seattle, WA",
-    "summary": "Technical writer for AWS DynamoDB and ElastiCache documentation. Background in writing and editing — not a software engineer. No experience operating databases directly.",
-    "skills": ["Technical Writing", "AWS", "API Documentation", "DITA", "Confluence", "Editing"],
-    "past_roles": [{"title": "Technical Writer", "company": "Microsoft", "years": 3}],
-    "education": [{"school": "University of Washington", "degree": "B.A. English"}],
-    "years_experience": 8
+    "summary": "Building Stargate \u2014 DataStax's open-source API layer that sits in front of Cassandra. I've been on this project since its inception 4 years ago. Stargate handles REST, GraphQL, and gRPC on top of CQL. The latency overhead Stargate adds relative to native CQL is a constant topic internally \u2014 we've worked hard to minimize it but there's a ceiling imposed by the translation layer. Contributor to the Apache Cassandra OSS project.",
+    "skills": [
+      "Apache Cassandra",
+      "Stargate",
+      "GraphQL",
+      "gRPC",
+      "REST APIs",
+      "Java",
+      "Quarkus",
+      "Open Source"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Twilio",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Washington",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 9
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/samuel-oduya-bizanalyst",
-    "full_name": "Samuel Oduya",
-    "headline": "Business Analyst · Financial Services · Stanbic Bank",
-    "current_company": "Stanbic Bank",
-    "current_title": "Business Analyst",
-    "location": "Nairobi, Kenya",
-    "summary": "Business analyst at Stanbic Bank focused on credit risk reporting and regulatory compliance. Working with Excel, Power BI, and SQL — no involvement in backend technology or database infrastructure decisions.",
-    "skills": ["Business Analysis", "SQL", "Power BI", "Excel", "Requirements Gathering"],
-    "past_roles": [{"title": "Junior Analyst", "company": "Equity Bank", "years": 2}],
-    "education": [{"school": "University of Nairobi", "degree": "B.Com Finance"}],
-    "years_experience": 5
+    "linkedin_url": "https://www.linkedin.com/in/ingrid-hoffmann-2fe7b4",
+    "full_name": "Ingrid Hoffmann",
+    "headline": "Director of Engineering, DSE \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Director of Engineering, DSE",
+    "location": "Munich, Germany",
+    "summary": "Director of Engineering for DataStax Enterprise at DataStax, responsible for the on-prem product that still generates the majority of DataStax's enterprise revenue. Managing 20 engineers through the difficult transition as DataStax shifts investment to cloud. The internal tension between DSE maintenance and Astra DB growth is something I've been navigating for 3 years. I know which DSE customers are most at risk of evaluating alternatives \u2014 and what they're looking for.",
+    "skills": [
+      "DataStax Enterprise",
+      "Engineering Leadership",
+      "Distributed Databases",
+      "Java",
+      "Team Management",
+      "Product Roadmap"
+    ],
+    "past_roles": [
+      {
+        "title": "Principal Engineer, DSE",
+        "company": "DataStax",
+        "years": 4
+      },
+      {
+        "title": "Senior Architect",
+        "company": "SAP",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "Ludwig Maximilian University",
+        "degree": "Diplom Informatik"
+      }
+    ],
+    "years_experience": 14
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/grace-chen-qa",
-    "full_name": "Grace Chen",
-    "headline": "QA Engineer · Test Automation · TSMC",
-    "current_company": "TSMC",
-    "current_title": "QA Engineer",
-    "location": "Taipei, Taiwan",
-    "summary": "QA engineer focused on test automation for semiconductor manufacturing software. Background in Selenium, Cypress, and Python testing frameworks. No database or distributed systems experience.",
-    "skills": ["Selenium", "Cypress", "Python", "Test Automation", "QA", "CI/CD"],
-    "past_roles": [{"title": "QA Intern", "company": "MediaTek", "years": 0}],
-    "education": [{"school": "NCTU", "degree": "B.S. Information Management"}],
+    "linkedin_url": "https://www.linkedin.com/in/james-osei-87bfe1",
+    "full_name": "James Osei",
+    "headline": "Software Engineer II, Astra DB \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Software Engineer II, Astra DB",
+    "location": "Toronto, Canada",
+    "summary": "Two years into my time at DataStax on the Astra DB backend team, primarily working on the tenant isolation layer and billing integration. Learning distributed systems fast \u2014 my team touches multi-tenancy, resource quotas, and the CQL execution path. Got my first two OSS Cassandra commits merged last quarter. Interested in the deeper storage layer work and plan to specialize there.",
+    "skills": [
+      "Apache Cassandra",
+      "Java",
+      "Astra DB",
+      "Multi-tenancy",
+      "Python",
+      "REST APIs",
+      "Git"
+    ],
+    "past_roles": [
+      {
+        "title": "Junior Software Engineer",
+        "company": "Shopify",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Toronto",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 3
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/lucia-fernandez-96ed55",
+    "full_name": "Luc\u00eda Fern\u00e1ndez",
+    "headline": "Software Engineer I, Cassandra OSS \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Software Engineer I, Cassandra OSS",
+    "location": "Madrid, Spain",
+    "summary": "First full-time role out of university, joined DataStax's open-source Cassandra team 18 months ago. Working on improving the streaming repair protocol and test coverage for the storage engine. Running learning sprints on SSTable format internals and the compaction scheduler. Aiming to go deep on the write path \u2014 want to be working at the storage layer level within two years.",
+    "skills": [
+      "Apache Cassandra",
+      "Java",
+      "SSTable",
+      "Distributed Systems",
+      "Python",
+      "Testing",
+      "Git"
+    ],
+    "past_roles": [
+      {
+        "title": "Intern",
+        "company": "DataStax",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "Universidad Polit\u00e9cnica de Madrid",
+        "degree": "B.S. Computer Engineering"
+      }
+    ],
+    "years_experience": 2
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/dakarai-moyo-af9003",
+    "full_name": "Dakarai Moyo",
+    "headline": "Junior Software Engineer, DSE \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Junior Software Engineer, DSE",
+    "location": "Johannesburg, South Africa",
+    "summary": "Two and a half years on the DSE platform team at DataStax, working on the enterprise feature set \u2014 mostly around search integration and node management tooling. Learning the operational side of Cassandra deeply, including how large enterprise clusters fail and recover. Building toward a senior role on the distributed storage side; doing deep reads on LSM-tree internals on nights and weekends.",
+    "skills": [
+      "DataStax Enterprise",
+      "Apache Cassandra",
+      "Java",
+      "Apache Solr",
+      "Python",
+      "Linux"
+    ],
+    "past_roles": [],
+    "education": [
+      {
+        "school": "University of Cape Town",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 3
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/yuki-tanaka-3b080f",
+    "full_name": "Yuki Tanaka",
+    "headline": "Junior SRE, Astra DB Infrastructure \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Junior SRE",
+    "location": "Tokyo, Japan",
+    "summary": "On the Astra DB infrastructure team for 2 years, learning Cassandra operations from the ground up \u2014 cluster bootstrap, repair scheduling, compaction monitoring. Writing runbooks and on-call tooling. Strong interest in the performance engineering side; recently published an internal post on GC pressure patterns we see on large Astra tenants. Planning to specialize in database performance reliability.",
+    "skills": [
+      "Apache Cassandra",
+      "Kubernetes",
+      "Prometheus",
+      "Python",
+      "Linux",
+      "nodetool",
+      "Bash"
+    ],
+    "past_roles": [
+      {
+        "title": "Systems Intern",
+        "company": "NTT Data",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "Keio University",
+        "degree": "B.S. Information Science"
+      }
+    ],
+    "years_experience": 3
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/anika-svensson-8bd1fd",
+    "full_name": "Anika Svensson",
+    "headline": "Software Engineer II, Stargate \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Software Engineer II, Stargate",
+    "location": "Stockholm, Sweden",
+    "summary": "Three years at DataStax on the Stargate API gateway team \u2014 working primarily on the REST and GraphQL adapters that translate to CQL under the hood. Getting deeper into the native protocol and the query path. Just started contributing to the Apache Cassandra OSS project. My goal for next year is to move into a senior engineer role working directly on CQL execution.",
+    "skills": [
+      "Apache Cassandra",
+      "Stargate",
+      "Java",
+      "GraphQL",
+      "REST",
+      "CQL",
+      "Open Source"
+    ],
+    "past_roles": [
+      {
+        "title": "Graduate Software Engineer",
+        "company": "King (gaming)",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "KTH Royal Institute of Technology",
+        "degree": "M.S. Computer Science"
+      }
+    ],
     "years_experience": 4
   },
   {
-    "linkedin_url": "https://www.linkedin.com/in/max-richter-scrum",
-    "full_name": "Max Richter",
-    "headline": "Scrum Master · Agile Coach · SAFe · BMW Group",
-    "current_company": "BMW Group",
-    "current_title": "Scrum Master",
-    "location": "Munich, Germany",
-    "summary": "Agile coach and Scrum Master at BMW Group's digital unit. Focused on sprint planning, retrospectives, and SAFe implementation. Non-technical role — no involvement in technology selection or data infrastructure.",
-    "skills": ["Scrum", "SAFe", "Agile Coaching", "JIRA", "Confluence", "Facilitation"],
-    "past_roles": [{"title": "Project Manager", "company": "Siemens", "years": 4}],
-    "education": [{"school": "LMU Munich", "degree": "B.A. Business Administration"}],
+    "linkedin_url": "https://www.linkedin.com/in/omar-hassan-02c1a3",
+    "full_name": "Omar Hassan",
+    "headline": "Associate Solutions Architect \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Associate Solutions Architect",
+    "location": "Dubai, UAE",
+    "summary": "Associate SA at DataStax for 2 years, supporting pre-sales for Astra DB and DSE in the MENA region. Running proof-of-concept deployments and data modeling workshops for banking and telco customers. Learning the technical depth fast \u2014 doing my own Cassandra performance testing on the side to be better equipped to handle the hard latency questions customers ask. Working toward a principal SA role.",
+    "skills": [
+      "Apache Cassandra",
+      "Astra DB",
+      "Data Modeling",
+      "CQL",
+      "Python",
+      "Solutions Architecture",
+      "Pre-sales"
+    ],
+    "past_roles": [
+      {
+        "title": "Database Intern",
+        "company": "Emirates NBD",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "American University of Beirut",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 3
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/isabella-costa-41335b",
+    "full_name": "Isabella Costa",
+    "headline": "Software Engineer I, Astra DB Vector \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Software Engineer I, Astra DB Vector",
+    "location": "S\u00e3o Paulo, Brazil",
+    "summary": "Joined DataStax 18 months ago working on the new Astra DB vector search feature \u2014 specifically the HNSW index integration with Cassandra's storage layer. New to distributed databases but learning fast; coming from an ML background makes the vector side intuitive. Spending a lot of time understanding how vector workloads interact with the underlying SSTable format. Excited about the intersection of AI and database infrastructure.",
+    "skills": [
+      "Apache Cassandra",
+      "Vector Search",
+      "HNSW",
+      "Python",
+      "Java",
+      "Machine Learning",
+      "Astra DB"
+    ],
+    "past_roles": [
+      {
+        "title": "ML Engineer Intern",
+        "company": "Ita\u00fa Unibanco",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "Universidade de S\u00e3o Paulo",
+        "degree": "B.S. Computer Engineering"
+      }
+    ],
+    "years_experience": 2
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/chen-wei-96277a",
+    "full_name": "Chen Wei",
+    "headline": "Software Engineer II, DSE Query \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Software Engineer II, DSE Query",
+    "location": "Singapore",
+    "summary": "Three years on the DSE query team at DataStax, working on CQL parsing, query planning, and the secondary index subsystem. Getting deeper into the execution engine and learning how query latency is determined at each layer. Recently fixed a long-standing bug in the range query path that affected P99 latency for customers with wide partitions. Aiming to become a domain expert on the query execution layer.",
+    "skills": [
+      "DataStax Enterprise",
+      "Apache Cassandra",
+      "CQL",
+      "Java",
+      "Query Optimization",
+      "Secondary Indexes"
+    ],
+    "past_roles": [
+      {
+        "title": "Software Engineer Intern",
+        "company": "Grab",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "Nanyang Technological University",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 4
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/patrick-dubois-c29040",
+    "full_name": "Patrick Dubois",
+    "headline": "Lead Developer Advocate, Apache Cassandra \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Lead Developer Advocate, Apache Cassandra",
+    "location": "Paris, France",
+    "summary": "Leading DataStax's developer advocacy for Apache Cassandra \u2014 I run the Cassandra community YouTube channel (28K subscribers), host the 'DataStax Developers' live coding sessions, and speak at 10\u201315 conferences per year. I have a genuine technical background: 5 years as a Cassandra ops engineer before moving to DevRel. I know the pain points personally, and I don't sugarcoat them in my content. That's actually why the community trusts me. Recently did a live comparison of Cassandra vs. alternatives that got picked up by InfoQ.",
+    "skills": [
+      "Apache Cassandra",
+      "Developer Relations",
+      "Community Building",
+      "Technical Content",
+      "Public Speaking",
+      "Java",
+      "Python",
+      "Astra DB"
+    ],
+    "past_roles": [
+      {
+        "title": "Cassandra Operations Engineer",
+        "company": "OVHcloud",
+        "years": 5
+      }
+    ],
+    "education": [
+      {
+        "school": "EPITA",
+        "degree": "M.S. Computer Science"
+      }
+    ],
+    "years_experience": 11
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/ravi-krishnamurthy-92682c",
+    "full_name": "Ravi Krishnamurthy",
+    "headline": "Principal Technical Evangelist \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Principal Technical Evangelist",
+    "location": "Bengaluru, India",
+    "summary": "Principal Technical Evangelist at DataStax with 8 years of experience in the Cassandra ecosystem \u2014 3 as a backend engineer at DataStax, 5 in my current advocacy role. I run the DataStax India community (12K members), co-maintain the 'datastax-examples' GitHub org (3K+ stars), and contribute regular deep-dive content to the Cassandra blog. My talks on 'Cassandra data modeling at scale' have been viewed 150K+ times on YouTube. I know what real production issues sound like because I get DMs from developers about them every week.",
+    "skills": [
+      "Apache Cassandra",
+      "Developer Evangelism",
+      "Community Management",
+      "Technical Writing",
+      "Data Modeling",
+      "Astra DB",
+      "Java",
+      "Python"
+    ],
+    "past_roles": [
+      {
+        "title": "Software Engineer",
+        "company": "DataStax",
+        "years": 3
+      },
+      {
+        "title": "Backend Engineer",
+        "company": "Flipkart",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "IIT Madras",
+        "degree": "B.Tech Computer Science"
+      }
+    ],
+    "years_experience": 11
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/sofia-bergmann-450bd3",
+    "full_name": "Sofia Bergmann",
+    "headline": "Technical Product Manager, Astra DB \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Technical Product Manager, Astra DB",
+    "location": "Zurich, Switzerland",
+    "summary": "TPM for the Astra DB core platform \u2014 I own the roadmap for the managed Cassandra control plane, tenant management, and multi-cloud deployment. Background: 5 years as a solutions engineer at DataStax before moving to product. I still write design docs, review architecture RFCs, and sit in on P1 incidents. My product decisions are grounded in actual CQL semantics and real operational tradeoffs, not just customer feature requests. Currently leading the initiative to improve cost predictability for large Astra tenants.",
+    "skills": [
+      "Product Management",
+      "Apache Cassandra",
+      "Astra DB",
+      "Technical Writing",
+      "Distributed Systems",
+      "Multi-cloud",
+      "Data Modeling"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior Solutions Engineer",
+        "company": "DataStax",
+        "years": 5
+      }
+    ],
+    "education": [
+      {
+        "school": "ETH Zurich",
+        "degree": "M.S. Computational Science"
+      }
+    ],
+    "years_experience": 12
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/mateo-reyes-a0158d",
+    "full_name": "Mateo Reyes",
+    "headline": "Developer Advocate, Astra DB Vector \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Developer Advocate, Astra DB Vector",
+    "location": "Mexico City, Mexico",
+    "summary": "Developer advocate at DataStax focused on the new vector search capabilities in Astra DB \u2014 bridging the AI/ML developer community and the Cassandra ecosystem. I build sample apps, tutorials, and give workshops on using Astra DB as a vector store for RAG pipelines. Former ML engineer with 3 years of production AI experience. The interesting questions I keep getting from developers: how does Astra's vector search hold up at scale compared to purpose-built vector DBs? I don't always have a satisfying answer.",
+    "skills": [
+      "Astra DB",
+      "Vector Search",
+      "Developer Relations",
+      "Python",
+      "LangChain",
+      "RAG",
+      "Apache Cassandra",
+      "Technical Content"
+    ],
+    "past_roles": [
+      {
+        "title": "ML Engineer",
+        "company": "Grupo Bimbo",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "UNAM",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 7
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/grace-okafor-ccb303",
+    "full_name": "Grace Okafor",
+    "headline": "Developer Advocate, Apache Cassandra Open Source \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Developer Advocate, Apache Cassandra Open Source",
+    "location": "Lagos, Nigeria",
+    "summary": "DataStax developer advocate focused on the Apache Cassandra open-source community \u2014 conference talks, blog posts, and the cassandra-dev mailing list. Engineering background: 4 years as a backend engineer on Cassandra-based systems before joining DataStax's advocacy team. Known in the community for pragmatic takes on Cassandra's real tradeoffs vs. the marketing story. Spoke at Cassandra Summit, EuroPython, and QCon London. My honest Cassandra content gets more engagement than the promotional stuff and I'm fine with that.",
+    "skills": [
+      "Apache Cassandra",
+      "Developer Advocacy",
+      "Community",
+      "Public Speaking",
+      "Java",
+      "Python",
+      "Open Source",
+      "Technical Writing"
+    ],
+    "past_roles": [
+      {
+        "title": "Backend Engineer",
+        "company": "Interswitch",
+        "years": 4
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Lagos",
+        "degree": "B.S. Computer Science"
+      }
+    ],
+    "years_experience": 8
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/aleksei-volkov-023c54",
+    "full_name": "Aleksei Volkov",
+    "headline": "Technical Product Manager, DSE & Cassandra Drivers \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Technical Product Manager, DSE & Cassandra Drivers",
+    "location": "Amsterdam, Netherlands",
+    "summary": "TPM for DataStax's open-source Cassandra driver portfolio (Java, Python, Node.js, Go) and the DSE product line. Former software engineer \u2014 spent 4 years writing Cassandra drivers at DataStax before moving into product. I still review every driver RFC and have opinions about protocol-level design. My biggest current project is helping enterprise DSE customers plan migration paths to Astra DB without breaking their driver integrations. I know where the friction is in the competitive evaluation process because I've sat in those calls.",
+    "skills": [
+      "Product Management",
+      "Apache Cassandra",
+      "Driver Development",
+      "DataStax Enterprise",
+      "CQL",
+      "Java",
+      "Python",
+      "Go",
+      "Open Source"
+    ],
+    "past_roles": [
+      {
+        "title": "Software Engineer, Drivers",
+        "company": "DataStax",
+        "years": 4
+      }
+    ],
+    "education": [
+      {
+        "school": "Lomonosov Moscow State University",
+        "degree": "M.S. Computer Science"
+      }
+    ],
     "years_experience": 10
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/derek-morrison-a5e621",
+    "full_name": "Derek Morrison",
+    "headline": "Enterprise Account Executive \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Enterprise Account Executive",
+    "location": "Dallas, TX",
+    "summary": "Enterprise AE at DataStax covering financial services accounts in the South-Central US. Selling Astra DB and DSE to banks, insurance companies, and capital markets firms. Eight years in enterprise software sales. My job is quota attainment \u2014 I'm focused on pipeline, deal structure, and executive relationships. I leave the technical conversations to our SAs.",
+    "skills": [
+      "Enterprise Sales",
+      "Salesforce",
+      "B2B SaaS",
+      "Financial Services",
+      "Account Management",
+      "Deal Negotiation"
+    ],
+    "past_roles": [
+      {
+        "title": "Account Executive",
+        "company": "Oracle",
+        "years": 4
+      },
+      {
+        "title": "SDR",
+        "company": "MongoDB",
+        "years": 2
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Texas",
+        "degree": "B.B.A. Marketing"
+      }
+    ],
+    "years_experience": 10
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/ashley-burns-0c5117",
+    "full_name": "Ashley Burns",
+    "headline": "Sales Development Representative \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Sales Development Representative",
+    "location": "Nashville, TN",
+    "summary": "SDR at DataStax focused on outbound prospecting for Astra DB in the mid-market segment. Identifying and qualifying leads in e-commerce, media, and SaaS verticals. Two years of experience in SaaS sales development. Working toward an AE role; my goal is to close my first deal by end of year.",
+    "skills": [
+      "Outbound Prospecting",
+      "Salesforce",
+      "Outreach.io",
+      "Cold Calling",
+      "SaaS Sales",
+      "Lead Qualification"
+    ],
+    "past_roles": [
+      {
+        "title": "BDR",
+        "company": "Zscaler",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "Vanderbilt University",
+        "degree": "B.A. Communications"
+      }
+    ],
+    "years_experience": 2
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/caroline-hu-3bbd5e",
+    "full_name": "Caroline Hu",
+    "headline": "Senior Product Marketing Manager \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Senior Product Marketing Manager",
+    "location": "San Jose, CA",
+    "summary": "Senior PMM at DataStax owning the go-to-market for Astra DB \u2014 positioning, messaging, competitive intelligence, and analyst relations. Three years at DataStax after 4 years at Confluent. I craft the narrative about why Astra DB beats the competition. Good at translating technical differentiation into business value stories for the C-suite buyer.",
+    "skills": [
+      "Product Marketing",
+      "Go-to-Market",
+      "Competitive Intelligence",
+      "Messaging & Positioning",
+      "Analyst Relations",
+      "Content Marketing"
+    ],
+    "past_roles": [
+      {
+        "title": "Product Marketing Manager",
+        "company": "Confluent",
+        "years": 4
+      }
+    ],
+    "education": [
+      {
+        "school": "UC Davis",
+        "degree": "B.S. Marketing"
+      }
+    ],
+    "years_experience": 9
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/james-whitfield-7a3cf5",
+    "full_name": "James Whitfield",
+    "headline": "Senior HR Business Partner \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Senior HR Business Partner",
+    "location": "Austin, TX",
+    "summary": "HRBP at DataStax supporting the engineering and product organizations \u2014 performance management, compensation planning, and talent retention. Five years in tech HR after starting in traditional HR consulting. I partner with engineering leaders to navigate org design and headcount decisions during the company's growth phase.",
+    "skills": [
+      "Human Resources",
+      "HR Business Partnering",
+      "Performance Management",
+      "Compensation",
+      "Org Design",
+      "Workday"
+    ],
+    "past_roles": [
+      {
+        "title": "HR Generalist",
+        "company": "Dell Technologies",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Texas",
+        "degree": "B.S. Human Resource Management"
+      }
+    ],
+    "years_experience": 8
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/nina-petrov-596d5c",
+    "full_name": "Nina Petrov",
+    "headline": "Senior Financial Analyst \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Senior Financial Analyst",
+    "location": "New York, NY",
+    "summary": "FP&A at DataStax, supporting the CFO with financial modeling, board reporting, and budget management for the cloud products business. Background in SaaS finance \u2014 I track ARR, net dollar retention, and cloud cost margins. Making sure the unit economics of Astra DB make sense as the business scales.",
+    "skills": [
+      "Financial Planning & Analysis",
+      "SaaS Metrics",
+      "Excel",
+      "Tableau",
+      "ARR Modeling",
+      "Budget Management"
+    ],
+    "past_roles": [
+      {
+        "title": "Financial Analyst",
+        "company": "Bessemer Venture Partners",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "NYU Stern",
+        "degree": "B.S. Finance"
+      }
+    ],
+    "years_experience": 7
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/tom-nielsen-4ffc22",
+    "full_name": "Tom Nielsen",
+    "headline": "Regional Sales Director, EMEA \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Regional Sales Director, EMEA",
+    "location": "London, UK",
+    "summary": "Sales Director for DataStax EMEA \u2014 managing a team of 8 enterprise AEs covering Western Europe. Responsible for new ARR and expansion revenue across the region. Career background in enterprise data infrastructure sales \u2014 prior roles at Cloudera and Hortonworks. My focus is on building pipeline, coaching AEs, and closing strategic deals.",
+    "skills": [
+      "Sales Leadership",
+      "Enterprise Sales",
+      "Revenue Growth",
+      "Team Management",
+      "Pipeline Management",
+      "B2B SaaS"
+    ],
+    "past_roles": [
+      {
+        "title": "Senior AE",
+        "company": "Cloudera",
+        "years": 4
+      },
+      {
+        "title": "AE",
+        "company": "Hortonworks",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "London School of Economics",
+        "degree": "B.Sc. Management"
+      }
+    ],
+    "years_experience": 14
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/sandra-reyes-255952",
+    "full_name": "Sandra Reyes",
+    "headline": "Senior Corporate Counsel \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Senior Corporate Counsel",
+    "location": "San Francisco, CA",
+    "summary": "In-house counsel at DataStax handling commercial contracts, SaaS agreements, and data privacy compliance. Negotiating enterprise MSAs and DPAs for Astra DB and DSE deployments. Background in technology transactional law at Cooley LLP before going in-house. My work touches every enterprise deal that closes at DataStax.",
+    "skills": [
+      "Contract Negotiation",
+      "Data Privacy",
+      "GDPR",
+      "Commercial Contracts",
+      "Technology Law",
+      "SaaS Agreements"
+    ],
+    "past_roles": [
+      {
+        "title": "Associate Attorney",
+        "company": "Cooley LLP",
+        "years": 4
+      }
+    ],
+    "education": [
+      {
+        "school": "Berkeley School of Law",
+        "degree": "J.D."
+      }
+    ],
+    "years_experience": 9
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/oliver-green-1e98a5",
+    "full_name": "Oliver Green",
+    "headline": "Sales Operations Manager \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Sales Operations Manager",
+    "location": "Denver, CO",
+    "summary": "Sales ops at DataStax \u2014 managing the CRM, sales process, forecasting, and compensation plan administration. Working with sales leadership to improve pipeline hygiene and reduce deal cycle time. Background in rev ops at SaaS companies. No engineering background; my world is Salesforce, Clari, and Excel.",
+    "skills": [
+      "Sales Operations",
+      "Salesforce",
+      "Clari",
+      "CRM Management",
+      "Revenue Operations",
+      "Forecasting"
+    ],
+    "past_roles": [
+      {
+        "title": "Sales Operations Analyst",
+        "company": "Marketo",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "University of Colorado",
+        "degree": "B.S. Business Administration"
+      }
+    ],
+    "years_experience": 7
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/bianca-lopes-70d2bf",
+    "full_name": "Bianca Lopes",
+    "headline": "Customer Marketing Manager \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Customer Marketing Manager",
+    "location": "S\u00e3o Paulo, Brazil",
+    "summary": "Customer marketing at DataStax \u2014 running the customer reference program, case studies, and advocacy programs for Astra DB customers. I work with our happiest customers to co-create content and get them on stage at events. Non-technical background; I understand the product at a business value level, not an engineering level.",
+    "skills": [
+      "Customer Marketing",
+      "Case Studies",
+      "Reference Programs",
+      "Customer Advocacy",
+      "Content Marketing",
+      "Event Marketing"
+    ],
+    "past_roles": [
+      {
+        "title": "Marketing Specialist",
+        "company": "TOTVS",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "FGV S\u00e3o Paulo",
+        "degree": "B.A. Marketing"
+      }
+    ],
+    "years_experience": 6
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/kevin-walsh-d39669",
+    "full_name": "Kevin Walsh",
+    "headline": "Business Development Representative \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Business Development Representative",
+    "location": "Boston, MA",
+    "summary": "BDR at DataStax focused on inbound lead qualification and outbound prospecting for enterprise Astra DB. Working the top of funnel \u2014 running sequences, booking demos, and qualifying budget and authority. First sales role out of college; learning the data infrastructure market. Goal is to get promoted to AE within 18 months.",
+    "skills": [
+      "Business Development",
+      "Outbound Prospecting",
+      "Salesforce",
+      "SalesLoft",
+      "Lead Qualification",
+      "Cold Email"
+    ],
+    "past_roles": [],
+    "education": [
+      {
+        "school": "Boston University",
+        "degree": "B.A. Political Science"
+      }
+    ],
+    "years_experience": 1
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/yuki-nakamura-a3bff2",
+    "full_name": "Yuki Nakamura",
+    "headline": "Communications Manager \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Communications Manager",
+    "location": "San Francisco, CA",
+    "summary": "PR and communications at DataStax \u2014 managing media relations, executive thought leadership, and company announcements. I coordinate press around product launches and funding news. Background in B2B tech PR at Edelman and InkHouse. I support the technical spokespeople at DataStax but I am not an engineer.",
+    "skills": [
+      "Public Relations",
+      "Media Relations",
+      "Executive Communications",
+      "Press Releases",
+      "B2B Tech PR",
+      "Thought Leadership"
+    ],
+    "past_roles": [
+      {
+        "title": "PR Account Manager",
+        "company": "Edelman",
+        "years": 4
+      }
+    ],
+    "education": [
+      {
+        "school": "USC Annenberg",
+        "degree": "B.A. Communications"
+      }
+    ],
+    "years_experience": 7
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/diana-fox-4345b2",
+    "full_name": "Diana Fox",
+    "headline": "Customer Success Manager \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Customer Success Manager",
+    "location": "Chicago, IL",
+    "summary": "CSM at DataStax managing a book of 30 Astra DB and DSE enterprise accounts. Focused on adoption, renewal, and expansion \u2014 my job is to make sure customers get business value from their DataStax deployments. I escalate technical issues to our engineering team; I don't go deep on the Cassandra internals myself. Background in SaaS customer success at Gainsight before joining DataStax.",
+    "skills": [
+      "Customer Success",
+      "Account Management",
+      "Renewal Management",
+      "Gainsight",
+      "QBRs",
+      "Churn Prevention"
+    ],
+    "past_roles": [
+      {
+        "title": "Customer Success Manager",
+        "company": "Gainsight",
+        "years": 3
+      }
+    ],
+    "education": [
+      {
+        "school": "Michigan State University",
+        "degree": "B.A. Business"
+      }
+    ],
+    "years_experience": 7
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/andre-bouchard-c9c661",
+    "full_name": "Andr\u00e9 Bouchard",
+    "headline": "Commercial Account Executive \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Commercial Account Executive",
+    "location": "Montreal, Canada",
+    "summary": "Commercial AE at DataStax covering mid-market accounts in Canada and the Northeast US. Selling Astra DB subscriptions to startups and growth-stage companies. Three years in SaaS sales; I moved into database infrastructure sales because the technical deals are more interesting. I still rely on SAs for anything deep in the product.",
+    "skills": [
+      "B2B Sales",
+      "Salesforce",
+      "Account Management",
+      "SaaS",
+      "Pipeline Management",
+      "Cold Outbound"
+    ],
+    "past_roles": [
+      {
+        "title": "Account Executive",
+        "company": "HubSpot",
+        "years": 2
+      }
+    ],
+    "education": [
+      {
+        "school": "McGill University",
+        "degree": "B.Com. Marketing"
+      }
+    ],
+    "years_experience": 4
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/priscilla-owens-2b5134",
+    "full_name": "Priscilla Owens",
+    "headline": "Executive Assistant to CTO \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Executive Assistant to CTO",
+    "location": "Santa Clara, CA",
+    "summary": "EA to the CTO at DataStax, managing calendar, travel, board prep logistics, and internal communications for the engineering leadership team. Supporting cross-functional coordination between engineering, product, and finance. Strong organizational skills; been in EA roles in tech for 9 years.",
+    "skills": [
+      "Executive Assistance",
+      "Calendar Management",
+      "Board Prep",
+      "Travel Coordination",
+      "G-Suite",
+      "Slack"
+    ],
+    "past_roles": [
+      {
+        "title": "Executive Assistant",
+        "company": "VMware",
+        "years": 5
+      }
+    ],
+    "education": [
+      {
+        "school": "San Jose State University",
+        "degree": "B.A. Business Administration"
+      }
+    ],
+    "years_experience": 9
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/pierre-dupont-01cc77",
+    "full_name": "Pierre Dupont",
+    "headline": "Enterprise Account Executive, France \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Enterprise Account Executive",
+    "location": "Paris, France",
+    "summary": "Enterprise AE at DataStax covering major accounts in France \u2014 primarily banking, telco, and public sector. Selling DSE and Astra DB at large enterprise scale. Been at DataStax 3 years; prior to this I was an AE at Teradata. I sell the business case; I bring my SA for anything that requires whiteboarding the architecture.",
+    "skills": [
+      "Enterprise Sales",
+      "Account Management",
+      "French Enterprise Market",
+      "Salesforce",
+      "B2B SaaS",
+      "Database Sales"
+    ],
+    "past_roles": [
+      {
+        "title": "Account Executive",
+        "company": "Teradata",
+        "years": 5
+      }
+    ],
+    "education": [
+      {
+        "school": "HEC Paris",
+        "degree": "M.S. Management"
+      }
+    ],
+    "years_experience": 11
+  },
+  {
+    "linkedin_url": "https://www.linkedin.com/in/brittany-johnson-648c58",
+    "full_name": "Brittany Johnson",
+    "headline": "Sales Development Representative \u00b7 DataStax",
+    "current_company": "DataStax",
+    "current_title": "Sales Development Representative",
+    "location": "Atlanta, GA",
+    "summary": "SDR at DataStax focused on outbound prospecting for DSE renewal and expansion opportunities. Identifying accounts that may be ready to evaluate Astra DB migration. Learning the technical landscape enough to have credible first conversations, but I hand off to SAs for anything technical. Working toward an AE role.",
+    "skills": [
+      "Outbound Sales",
+      "Prospecting",
+      "Salesforce",
+      "Outreach.io",
+      "Cold Calling",
+      "Lead Generation"
+    ],
+    "past_roles": [
+      {
+        "title": "SDR",
+        "company": "Snowflake",
+        "years": 1
+      }
+    ],
+    "education": [
+      {
+        "school": "Georgia State University",
+        "degree": "B.B.A. Business Administration"
+      }
+    ],
+    "years_experience": 2
   }
 ]

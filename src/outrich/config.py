@@ -13,10 +13,10 @@ SEGMENT_QUOTAS: dict[str, int] = {
 }
 
 ICP = (
-    "Engineers, architects, and engineering leaders at companies running Cassandra / "
-    "DataStax Enterprise / Astra DB workloads — particularly where latency, cost, or "
-    "operational complexity are likely pain points. Secondary ICP: AI/ML leaders, "
-    "DevRel figures, and infrastructure investors with adjacency to the NoSQL ecosystem."
+    "Technical employees at DataStax — engineers, architects, engineering managers, "
+    "solutions architects, DevRel, and technical product leaders who work on "
+    "DataStax Enterprise (DSE), Astra DB, or the Apache Cassandra open-source ecosystem. "
+    "These are the technical staff of ScyllaDB's primary database competitor."
 )
 
 
@@ -28,7 +28,7 @@ class Settings(BaseSettings):
     apify_token: Optional[str] = None
 
     claude_model: str = "claude-sonnet-4-6"
-    gemini_model: str = "gemini-1.5-flash"
+    gemini_model: str = "gemini-2.0-flash"
     apify_actor: str = "harvestapi/linkedin-profile-search"
     apify_limit: int = 50
 

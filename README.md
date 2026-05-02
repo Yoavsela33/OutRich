@@ -2,8 +2,8 @@
 
 AI-powered B2B outreach pipeline. Define your ICP and a target competitor's user base — OutRich handles lead discovery, AI qualification, and personalized message drafting at scale, with a full audit trail in a local database.
 
-**Want to see output without running anything?** A complete sample run is committed to this repo — 41 leads qualified, 10 selected, 20 messages drafted:
-**[View the full report →](data/sample_run/report.md)**
+**Want to see output without running anything?** A complete sample run is committed to this repo — 42 DataStax employees qualified, 10 selected, 20 messages drafted:
+**[Full report →](data/sample_run/report.md)** &nbsp;|&nbsp; **[Results CSV →](data/sample_run/results.csv)** &nbsp;|&nbsp; **[SQLite DB →](data/sample_run/outrich.db)**
 
 ## How it works
 
@@ -101,7 +101,7 @@ All settings via `.env` (see `.env.example`):
 | `GEMINI_API_KEY` | one of these | — | Gemini (fallback LLM) |
 | `APIFY_TOKEN` | for `--source apify` | — | LinkedIn profile discovery |
 | `CLAUDE_MODEL` | optional | `claude-sonnet-4-6` | Override Claude model |
-| `GEMINI_MODEL` | optional | `gemini-1.5-flash` | Override Gemini model |
+| `GEMINI_MODEL` | optional | `gemini-2.0-flash` | Override Gemini model |
 
 ## Caching and idempotency
 

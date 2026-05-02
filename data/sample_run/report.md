@@ -1,15 +1,15 @@
-# OutRich Pipeline Run — 2026-04-30 18:48 UTC
+# OutRich Pipeline Run — 2026-05-02 08:10 UTC
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Leads discovered | 41 |
-| Leads qualified | 41 |
-| &nbsp;&nbsp;↳ obvious_fit | 13 |
-| &nbsp;&nbsp;↳ high_potential_low_experience | 9 |
-| &nbsp;&nbsp;↳ wild_card | 4 |
-| &nbsp;&nbsp;↳ not_relevant | 15 |
+| Leads discovered | 42 |
+| Leads qualified | 42 |
+| &nbsp;&nbsp;↳ obvious_fit | 12 |
+| &nbsp;&nbsp;↳ high_potential_low_experience | 8 |
+| &nbsp;&nbsp;↳ wild_card | 6 |
+| &nbsp;&nbsp;↳ not_relevant | 16 |
 | Leads selected for outreach | 10 |
 | Messages drafted | 20 |
 | Messages triggered (dry-run) | 20 |
@@ -18,450 +18,453 @@
 
 Leads are selected by a quota system that reflects deliberate GTM thinking:
 
-- **6 obvious_fit** — proven decision-makers at confirmed Cassandra/DataStax shops. Highest close probability.
-- **3 high_potential_low_experience** — junior engineers at the right companies. Lower authority today, but future champions who influence stack decisions as they grow.
-- **1 wild_card** — non-obvious but strategically interesting: AI leaders who could become PMs, DevRel figures with community reach, infrastructure investors.
+- **6 obvious_fit** — senior technical DataStax employees: engineers, architects, and engineering leaders working directly on Cassandra, DSE, or Astra DB. Highest value as recruits, ecosystem connectors, or converted advocates.
+- **3 high_potential_low_experience** — junior DataStax engineers on the right stack. Limited authority today, but they grow into senior roles and carry deep institutional knowledge of the competitive stack.
+- **1 wild_card** — non-obvious but strategically interesting DataStax employees: Developer Advocates with Cassandra community reach, Technical PMs who know the product deeply, Principal Evangelists.
 
 The qualifier AI assigns each lead to a segment and scores them 0–100. Selection then picks the top-N per quota.
 
 ## Obvious fit (6/6)
 
-### Marcus Chen
-**Staff Software Engineer** at **Netflix** · San Jose, CA
-_Staff Software Engineer · Cassandra Platform · Netflix_
+### Elena Marchetti
+**Principal Engineer, Cassandra Core** at **DataStax** · Santa Clara, CA
+_Principal Engineer, Cassandra Core · DataStax_
 
-**Score:** 97/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
+**Score:** 99/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
 
-**Qualifier reasoning:** Marcus Chen is a Staff SWE explicitly owning Netflix's Cassandra platform — 300+ node clusters at 100M+ DAU scale. He is actively migrating from DSE to OSS Cassandra while maintaining tight latency SLOs, a textbook ScyllaDB pain point. Staff level means real architectural influence. Prior LinkedIn distributed storage experience adds depth. Every ScyllaDB value prop (P99 latency, node-count TCO reduction, drop-in Cassandra API) maps directly to his current operational reality.
+**Qualifier reasoning:** Principal Engineer at DataStax, 8 years in Cassandra Core, leading storage engine modernization on compaction and write-path latency. 400+ OSS commits, Cassandra Summit 2023 speaker on high-concurrency write-path limits. SSTable, LSM Trees, compaction skills align precisely with ScyllaDB's core advantages. Strong influence, OSS visibility, candid about Cassandra's rough edges — textbook recruit and peer engagement target.
 
-**ScyllaDB angle:** Position ScyllaDB as the natural next step in his DSE→OSS Cassandra migration: same CQL API (zero rewrite), far fewer nodes at 300+ node scale (direct TCO win for Netflix), and P99 latency gains that make SLO maintenance dramatically easier during and after migration.
+**ScyllaDB angle:** Peer outreach on storage engine design: ScyllaDB's shard-per-core model and compaction solve the exact latency and compaction gaps she's tackling. Her candor about Cassandra's limits is a ready-made entry point.
 
 **Pain points identified:**
 
-- Maintaining latency SLOs during DSE-to-OSS Cassandra migration
-- Operational complexity of managing 300+ node clusters
-- Cost of running large Cassandra clusters at Netflix scale
-- Risk of latency degradation at 100M+ DAU serving scale
+- Compaction inefficiency and latency gaps in Cassandra's storage engine
+- High-concurrency write-path bottlenecks (Cassandra Summit 2023 talk)
+- Storage engine modernization complexity within legacy Cassandra architecture
+- P99 latency instability under production workloads
 
 **LinkedIn invite** *(dry-run)*
 
-> Managing 300+ node Cassandra clusters mid-DSE migration while holding P99 SLOs is a brutal constraint. ScyllaDB offers the same CQL API but typically cuts node counts 3-5x — worth 15 min?
+> Elena — 8 years on Cassandra Core and a Summit talk on write-path limits under concurrency: you know the compaction and P99 problems better than almost anyone. Worth 15 min to compare notes on how ScyllaDB's shard-per-core model approaches the same constraints?
 
-*Hooks used: Netflix Cassandra platform owner with 300+ node clusters, Actively migrating from DSE to OSS Cassandra, Explicitly focused on maintaining tight latency SLOs during migration*
-*Characters: 187/300*
+*Hooks used: Principal Engineer, Cassandra Core at DataStax, 8 years at DataStax on Cassandra Core, Cassandra Summit 2023 speaker on high-concurrency write-path limits, Leading storage engine modernization focused on compaction and latency gaps*
+*Characters: 261/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** DSE → OSS Cassandra migration at Netflix scale
+**Subject:** Cassandra compaction gaps vs. ScyllaDB's storage model
 
-Marcus — your summary mentions migrating Netflix's 300+ node DSE clusters to OSS Cassandra while keeping latency SLOs intact. That's a hard problem: OSS Cassandra's P99 tail latency tends to widen exactly when you can least afford it at 100M+ DAU.
+Elena,
 
-ScyllaDB is a drop-in CQL replacement that typically consolidates 300 Cassandra nodes to 60-100, and its shard-per-core architecture directly attacks P99 variance — the thing that makes SLO maintenance painful during a migration.
+You presented at Cassandra Summit 2023 on write-path limits under high concurrency — the exact problem ScyllaDB's shard-per-core architecture was designed to eliminate. With 8 years leading Cassandra Core work and a current focus on storage engine modernization, you have sharper context on these trade-offs than most.
 
-Worth a 15-min call to walk through how Disney+ and Comcast handled comparable migrations?
+I'm not here to sell you. I'd like a 15-minute technical conversation — compaction scheduling, P99 under concurrent writes, and where the LSM design decisions diverge between the two engines.
+
+Worth a call?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Netflix Cassandra platform, 300+ node clusters at 100M+ DAU, Active DSE-to-OSS Cassandra migration in progress, Explicit SLO maintenance constraint during migration, Staff-level ownership means architectural decision influence*
+*Hooks used: Principal Engineer, Cassandra Core at DataStax, 8 years at DataStax on Cassandra Core, Cassandra Summit 2023 talk on high-concurrency write-path limits, Current focus on storage engine modernization targeting compaction and latency gaps*
 
 ---
 
-### Sarah Okonkwo
-**Principal Database Architect** at **Uber** · San Francisco, CA
-_Principal Database Architect · Uber · Distributed Data Systems_
+### Mei Zhang
+**VP Engineering, Astra DB** at **DataStax** · San Francisco, CA
+_VP Engineering, Astra DB · DataStax_
 
-**Score:** 97/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
+**Score:** 98/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
 
-**Qualifier reasoning:** Principal DB Architect at Uber (hyperscale DSE/Cassandra user), 12 years exp, clear stack authority. Explicitly leading a 40% TCO reduction initiative after cloud costs spiraled — a direct ScyllaDB pain match. Prior Senior DBA at Twitter (heavy Cassandra shop) adds depth. Data+AI Summit 2023 speaker signals broad community influence. Seniority, decision power, active cost pain, and confirmed DSE usage all align perfectly with ICP.
+**Qualifier reasoning:** VP Engineering for Astra DB, leading 80+ engineers on DataStax's core managed Cassandra product. Google Bigtable Staff Engineer background adds deep distributed systems credibility. Explicitly tracks P99 latency, SLA breach rates, and cost per GB — ScyllaDB's primary competitive levers. Her public debate on Cassandra compatibility vs. storage differentiation signals architectural uncertainty at the top of Astra DB engineering.
 
-**ScyllaDB angle:** Lead with TCO: ScyllaDB's Cassandra-compatible API means no rewrite risk, while delivering 40–80% infra cost reduction — matching Sarah's stated 40% goal. Propose a benchmarking PoC on Uber's DSE workloads.
+**ScyllaDB angle:** Engage on P99 latency and cost-per-GB — metrics she already owns. ScyllaDB's 10x latency and 5x TCO story hits her hyperscaler pressure directly. Cassandra API compatibility removes migration risk, sidestepping her storage-layer debate.
 
 **Pain points identified:**
 
-- Cloud cost spiral on DataStax Enterprise — targeting 40% TCO cut
-- Operational complexity of Cassandra at Uber's hyperscale
-- P99 latency pressure on ride/delivery matching
-- Cassandra upgrade and maintenance burden at scale
+- Hyperscaler competition pressuring Astra DB on price and performance
+- Internal debate on Cassandra compatibility vs. storage layer differentiation
+- P99 latency and SLA breach rate management at scale
+- Cost per GB efficiency on a large managed cloud product
 
 **LinkedIn invite** *(dry-run)*
 
-> Sarah — leading a 40% DSE TCO cut at Uber's scale is a hard problem. ScyllaDB is Cassandra-compatible (no rewrite) and has delivered 40–80% infra cost reductions for similar workloads. Worth 15 minutes?
+> Mei — VP Engineering on Astra DB, ex-Bigtable: you know this space cold. The Cassandra-compatibility-vs-storage-layer debate is exactly where ScyllaDB's architecture is relevant. Worth 15 min to compare P99 and cost-per-GB numbers directly? — Yoav
 
-*Hooks used: Sarah is leading a 40% TCO reduction initiative on DataStax Enterprise at Uber, ScyllaDB's Cassandra-compatible API eliminates rewrite risk — directly addressing her constraint, Uber operates at hyperscale across rides, eats, and freight workloads*
-*Characters: 202/300*
+*Hooks used: VP Engineering for Astra DB at DataStax, Ex-Google Bigtable Staff Engineer background, Explicitly tracks P99 latency and cost per GB, Internal debate on Cassandra compatibility vs. storage layer differentiation*
+*Characters: 247/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** Uber's DSE TCO goal — ScyllaDB PoC worth a look
+**Subject:** Astra DB P99 and cost-per-GB vs. ScyllaDB
 
-Sarah,
+Mei,
 
-You mentioned leading a 40% Cassandra TCO reduction after cloud costs spiraled at Uber. That's exactly the problem ScyllaDB was built for — Cassandra-compatible API, so there's no rewrite risk, but the architecture eliminates the JVM overhead and compaction bottlenecks that drive DSE costs at hyperscale.
+You run engineering for Astra DB and you're already tracking the metrics that matter most in this comparison: P99 latency distributions, SLA breach rates, and cost per GB under hyperscaler pressure.
 
-Operators running comparable DSE workloads have landed 40–80% infra cost reductions. Given your timeline and scale across rides, eats, and freight, a focused benchmarking PoC on your actual workloads would give you concrete data fast.
+The storage-layer debate you're navigating internally is one ScyllaDB has a direct answer to — a C++-native, shard-per-core architecture that keeps full Cassandra API compatibility while materially moving those numbers.
 
-Worth a 15-minute call to see if the numbers hold for Uber's profile?
+I'd rather show you a benchmark head-to-head than describe it. Can we put 15 minutes on the calendar to walk through the data?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Explicitly leading a 40% TCO reduction initiative on DataStax Enterprise at Uber, Cloud cost spiral called out directly in her LinkedIn summary, Uber's multi-product hyperscale footprint (rides, eats, freight) signals broad DSE operational surface, Data+AI Summit 2023 speaker — technically credible, peer-to-peer tone appropriate*
+*Hooks used: VP Engineering for Astra DB overseeing 80+ engineers on DataStax's core managed Cassandra product, Explicitly tracks P99 latency distributions, SLA breach rates, and cost per GB, Internal architectural debate on Cassandra compatibility vs. storage layer differentiation, Hyperscaler competition cited as direct pressure on Astra DB*
 
 ---
 
-### Dmitri Volkov
-**Senior Infrastructure Engineer** at **Apple** · Cupertino, CA
-_Senior Infrastructure Engineer · Storage Systems · Apple_
+### Kwame Asante
+**Staff Engineer, Astra DB** at **DataStax** · Austin, TX
+_Staff Engineer, Astra DB · DataStax_
 
 **Score:** 97/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
 
-**Qualifier reasoning:** Dmitri is a Senior Infrastructure Engineer at Apple running one of the world's largest Cassandra deployments on the iCloud storage layer. 10 years of experience, clearly senior and technically influential. His focus on multi-DC replication and cross-region failover maps directly to ScyllaDB strengths. His Cassandra Summit 2022 talk on petabyte-scale compaction signals deep expertise and community visibility. Apple's iCloud scale virtually guarantees latency, cost, and compaction pain points ScyllaDB directly solves.
+**Qualifier reasoning:** Staff Engineer, 7 years at DataStax, last 4 focused entirely on Astra DB's multi-region replication layer. Personally designed the cross-region consistency protocol at 2M+ writes/sec — deep architectural authority. Critically, he self-identifies pain with Astra DB's cost-per-query model at scale and the gap between promises and production reality. These are exactly the pain points ScyllaDB's TCO and performance story addresses. Textbook senior technical target with insider knowledge and latent dissatisfaction.
 
-**ScyllaDB angle:** Open with ScyllaDB's compaction performance at petabyte scale — tied directly to his Summit talk. Emphasize 10x P99 latency gains, node-count reduction cutting Apple's operational footprint, and drop-in Cassandra API compatibility eliminating rewrite risk for a mission-critical iCloud deployment.
+**ScyllaDB angle:** Lead with ScyllaDB's 5x TCO advantage and predictable pricing — targeting his stated cost-per-query frustration. Reinforce with P99 latency benchmarks at his write scale (2M+ writes/sec). Cassandra API compatibility eliminates rewrite risk and is a natural conversation opener.
 
 **Pain points identified:**
 
-- Compaction overhead and strategy tuning at petabyte scale
-- Multi-DC replication complexity and cross-region failover reliability
-- Operational cost and node sprawl at iCloud scale
-- P99 latency management under massive iCloud traffic
-- Cassandra upgrade and maintenance burden at extreme scale
+- Cost-per-query model painful at scale (self-identified)
+- Gap between Astra DB production promises and real-world delivery
+- Multi-region replication complexity at 2M+ writes/sec
 
 **LinkedIn invite** *(dry-run)*
 
-> Your Cassandra Summit 2022 talk on petabyte-scale compaction caught my attention. At ScyllaDB we've cut compaction overhead and P99 latency by 10x on comparable deployments — with full Cassandra API compatibility. Worth 15 minutes?
+> Kwame — seven years on Astra DB's replication layer, including the cross-region consistency protocol at 2M+ writes/sec, is serious depth. Given your stated friction with Astra's cost-per-query model at scale, ScyllaDB's TCO story is worth 15 minutes.
 
-*Hooks used: Presented at Cassandra Summit 2022 on compaction strategies at petabyte scale, Runs one of the world's largest Cassandra deployments on iCloud, ScyllaDB's drop-in Cassandra API compatibility eliminates rewrite risk*
-*Characters: 231/300*
+*Hooks used: Staff Engineer on Astra DB's multi-region replication layer at DataStax, Personally designed cross-region consistency protocol at 2M+ writes/sec, Self-identified frustration with Astra DB's cost-per-query model at scale*
+*Characters: 250/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** Compaction at petabyte scale — ScyllaDB vs Cassandra
+**Subject:** Cost-per-query pain at 2M writes/sec — ScyllaDB TCO
 
-Dmitri,
+Kwame,
 
-Your Cassandra Summit 2022 talk on compaction strategies at petabyte scale is exactly the problem space ScyllaDB was built for. Operators running iCloud-scale Cassandra clusters consistently hit the same ceiling: compaction amplification, P99 spikes under heavy traffic, and node sprawl that inflates operational cost.
+You've spent four years on Astra DB's replication layer and personally designed the cross-region consistency protocol running at 2M+ writes/sec. You also know firsthand where the cost-per-query model breaks down at that scale.
 
-ScyllaDB's shard-per-core architecture and incremental compaction typically cut P99 latency 10x and reduce node count significantly — with a drop-in Cassandra API, so nothing in your replication topology needs to change.
+ScyllaDB runs the same Cassandra-compatible workloads with a flat, predictable cost model and consistent P99 latencies at your write volumes — no cold-start surprises, no per-query tax that compounds at scale.
 
-Worth a 15-minute technical call to compare notes?
+Worth a 15-minute call to walk through the benchmark numbers side-by-side?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Presented at Cassandra Summit 2022 on compaction strategies at petabyte scale, Runs one of the world's largest Cassandra deployments on the iCloud storage layer, Focused on multi-DC replication and cross-region failover — maps directly to ScyllaDB strengths, Pain points around compaction overhead, P99 latency, and node sprawl at iCloud scale*
+*Hooks used: Staff Engineer on Astra DB's multi-region replication layer, DataStax, Designed cross-region consistency protocol at 2M+ writes/sec in production, Self-identified pain with Astra DB's cost-per-query model at scale, Seven years at DataStax with four focused entirely on Astra DB architecture*
 
 ---
 
-### Priya Ramanujan
-**Engineering Manager, Data Infrastructure** at **Discord** · San Francisco, CA
-_Engineering Manager, Data Infrastructure · Discord_
+### Priya Nair
+**Director of Engineering, DSE Platform** at **DataStax** · New York, NY
+_Director of Engineering, DSE Platform · DataStax_
 
 **Score:** 97/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
 
-**Qualifier reasoning:** Priya manages Data Infrastructure at Discord, one of the most documented large-scale Cassandra deployments (500M+ users). She led the 2022 DSE → OSS Cassandra migration and explicitly cites tail latency at scale as a "constant challenge" — a direct, self-declared pain point. Senior decision-maker, confirmed Cassandra operator, and clear alignment with ScyllaDB's P99 latency and TCO value props. Prior Twitch infra experience adds further signal. Virtually no qualification gaps.
+**Qualifier reasoning:** Director of Engineering leading 35 engineers across DSE Platform (storage, query, search) — the core of DataStax's Cassandra enterprise product. Former Principal Engineer on DSE's Solr-on-Cassandra integration gives her deep technical roots. She explicitly flags the DSE-vs-Astra internal tension and the pain of keeping legacy customers happy under shifting investment. Senior title, large org ownership, hands-on technical history, and visible strategic frustration make her a textbook ScyllaDB outreach target.
 
-**ScyllaDB angle:** Lead with ScyllaDB's P99 latency advantages at Discord-scale, referencing drop-in Cassandra API compatibility (zero rewrite risk post-DSE migration). Secondary hook: node consolidation reducing operational overhead and TCO on large clusters.
+**ScyllaDB angle:** Lead with DSE platform pain: ScyllaDB is a drop-in Cassandra-compatible alternative that cuts nodes, latency, and maintenance overhead — letting her team do more with less. The DSE-vs-Astra investment tension she navigates quarterly is exactly the opening ScyllaDB exploits.
 
 **Pain points identified:**
 
-- Tail latency (P99) at scale — self-described as a 'constant challenge'
-- Recent DSE → OSS Cassandra migration complexity and ongoing ops burden
-- Scaling message storage for 500M+ registered users
-- Operational overhead of managing large Cassandra clusters
+- Strategic tension between DSE enterprise commitments and DataStax's shift toward Astra DB
+- Managing a deprioritized 35-engineer legacy platform org
+- Keeping DSE customers satisfied as internal investment migrates to cloud-native
+- Complexity of maintaining DSE storage, query, and Solr/search integration on Cassandra
 
 **LinkedIn invite** *(dry-run)*
 
-> Priya — managing Cassandra at Discord scale with P99 tail latency as a "constant challenge" is exactly where ScyllaDB's architecture tends to move the needle. Drop-in Cassandra API, no rewrite risk. Worth 15 min?
+> Priya — you know DSE's internals better than almost anyone. With DataStax investment shifting to Astra, curious if you'd spare 15 min to compare notes on how ScyllaDB handles the enterprise Cassandra workloads your platform team owns.
 
-*Hooks used: Discord's 500M+ user Cassandra deployment, Self-described P99 tail latency as a 'constant challenge', Drop-in Cassandra API compatibility — no rewrite risk after DSE migration*
-*Characters: 212/300*
+*Hooks used: Director of Engineering, DSE Platform at DataStax, Former Principal Engineer on DSE Solr-on-Cassandra integration, Publicly acknowledged DSE-vs-Astra investment tension*
+*Characters: 234/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** P99 latency at Discord's Cassandra scale
+**Subject:** ScyllaDB vs DSE — worth 15 min of your time?
 
 Priya,
 
-You called out tail latency at scale as a "constant challenge" — that's not a tuning problem, it's a JVM-and-shared-nothing architecture problem that OSS Cassandra doesn't fully escape.
+You've spent years at the core of DSE — first as Principal Engineer on the Solr-on-Cassandra stack, now directing 35 engineers across storage, query, and search. You understand the platform's strengths and its ceiling better than most.
 
-ScyllaDB is a drop-in Cassandra replacement (same CQL/drivers, no rewrite) built on a thread-per-core model that consistently cuts P99s by 10x in comparable deployments. Given you just completed the DSE migration, compatibility risk is near zero.
+The DSE-vs-Astra investment split you navigate quarterly is exactly where ScyllaDB tends to surface as a credible path: Cassandra-compatible, fewer nodes, lower p99 latency, less operational overhead for your enterprise customers.
 
-If it's useful, I can send Discord-relevant benchmark data or find 15 minutes to walk through the latency specifics.
+Worth a 15-min technical comparison call to see if the numbers are relevant to what your team is dealing with?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Discord runs Cassandra for 500M+ registered user message storage, Priya self-declared P99 tail latency as a 'constant challenge', Led the 2022 DSE to OSS Cassandra migration — drop-in compatibility directly lowers switching risk, OSS Cassandra's JVM architecture as the root cause of tail latency at their scale*
+*Hooks used: Director of Engineering leading 35 engineers across DSE Platform (storage, query, search), Former Principal Engineer on DSE Solr-on-Cassandra integration, Explicitly navigates DSE-vs-Astra internal investment tension quarterly, 13 years of experience with deep hands-on Cassandra and distributed systems background*
 
 ---
 
-### James Whitfield
-**Principal Data Engineer** at **JPMorgan Chase** · New York, NY
-_Principal Data Engineer · Real-Time Analytics · JPMorgan Chase_
+### Rodrigo Santana
+**Principal Solutions Architect** at **DataStax** · Miami, FL
+_Principal Solutions Architect · DataStax_
 
 **Score:** 97/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
 
-**Qualifier reasoning:** James is a Principal Data Engineer at JPMC with 13 years experience, explicitly running DataStax Enterprise in production for trade surveillance at 200k ops/sec with sub-10ms read SLAs. He has seniority to influence or drive database vendor decisions. Critical buying signal: DSE contract is up for renewal and he is actively evaluating alternatives — a live, time-sensitive opportunity. ScyllaDB's drop-in DSE compatibility, 10x P99 latency gains, and TCO reduction directly address his evaluation criteria.
+**Qualifier reasoning:** Rodrigo is a Principal SA at DataStax with 6 years of tenure — a textbook target. He is explicitly customer-facing, working with Fortune 500 banks, telcos, and retail on Cassandra and Astra DB at extreme scale. He personally witnesses tail latency and data modeling failures, and presented "Cassandra Anti-Patterns in Production" at ApacheCon 2022 — confirming deep expertise and ecosystem authority. Prior 7 years as DBA at Accenture and IBM further reinforces database depth. He knows the pain points cold and talks to affected customers daily.
 
-**ScyllaDB angle:** Lead with drop-in DSE compatibility (zero rewrite risk) and P99 latency benchmarks at 200k+ ops/sec to address his sub-10ms SLA. Frame TCO savings as a contract-renewal lever — JPMC pays enterprise DSE pricing. Engage now while his evaluation window is open.
+**ScyllaDB angle:** Engage as a technical peer: Rodrigo personally experiences the P99 latency and data modeling pain ScyllaDB solves. Drop-in Cassandra API compatibility means zero rewrite for his customers. His ApacheCon platform and customer reach make him a top recruit and ecosystem connector candidate.
 
 **Pain points identified:**
 
-- DSE contract renewal cost pressure — actively seeking alternatives
-- Sub-10ms P99 latency SLA under 200k ops/sec is hard to sustain on DSE at scale
-- Operational complexity of DataStax Enterprise at JPMC scale
-- Vendor lock-in risk with DataStax licensing model
+- P99 / tail latency issues in Cassandra production — named explicitly in his summary
+- Data modeling constraints at extreme scale causing Fortune 500 customer friction
+- Operational complexity of Cassandra at telco, banking, and retail scale
+- Recurring Cassandra anti-patterns in production — his own ApacheCon 2022 talk topic
 
 **LinkedIn invite** *(dry-run)*
 
-> James — sub-10ms P99 at 200k ops/sec on DSE is a hard SLA to hold. With your contract up for renewal, worth knowing ScyllaDB is drop-in DSE-compatible and consistently beats those latencies. 15 min to share benchmarks at your scale?
+> Rodrigo — you know Cassandra's tail latency and data modeling limits better than most, given 6 years of Fortune 500 SAs at DataStax. Worth 15 min to compare how ScyllaDB's architecture handles the P99 problems you present about at ApacheCon?
 
-*Hooks used: Explicitly running DSE in production for trade surveillance at JPMC, Sub-10ms P99 read SLA at 200k ops/sec stated in profile, DSE contract actively up for renewal — live evaluation window*
-*Characters: 232/300*
+*Hooks used: Principal SA at DataStax for 6 years, Customer-facing work with Fortune 500 banks, telcos, and retail on Cassandra/Astra DB, Presented 'Cassandra Anti-Patterns in Production' at ApacheCon 2022, Explicitly names P99 tail latency and data modeling constraints in his summary*
+*Characters: 241/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** DSE renewal at JPMC — ScyllaDB benchmarks at 200k ops/sec
+**Subject:** Cassandra P99 tail latency — ScyllaDB's take
 
-James,
+Rodrigo,
 
-You mentioned evaluating DSE alternatives as your contract comes up. ScyllaDB is wire-compatible with DSE — no rewrite, no migration risk — and in production deployments at comparable ops/sec we routinely see P99 latencies cut by half or more against your sub-10ms target.
+You've spent 6 years as a Principal SA at DataStax watching Fortune 500 banks and telcos hit the same walls: P99 latency spikes and data modeling constraints at extreme scale. You literally presented on Cassandra anti-patterns in production at ApacheCon 2022 — you know these failure modes cold.
 
-For a trade surveillance workload where a blown SLA has real consequences, that headroom matters. JPMC's DSE licensing spend is also the kind of cost center where our TCO numbers tend to resonate.
+ScyllaDB is a drop-in Cassandra API replacement built in C++ with a shard-per-core architecture that directly targets the tail latency problem. No rewrite for your customers' existing CQL schemas.
 
-Worth 15 minutes to walk through benchmarks at your exact load profile?
+Worth a 15-min technical comparison call?
 
 — Yoav, ScyllaDB
 
-*Hooks used: DSE in production for trade surveillance at JPMC — explicitly stated, Sub-10ms P99 read SLA at 200k ops/sec — concrete workload detail from profile, DSE contract renewal actively in progress — time-sensitive buying signal, JPMC-scale enterprise DSE pricing as TCO lever*
+*Hooks used: Principal SA at DataStax for 6 years, Customer-facing Fortune 500 work in banking, telco, and retail on Cassandra and Astra DB, Presented 'Cassandra Anti-Patterns in Production' at ApacheCon 2022, Explicitly cites P99 tail latency and data modeling constraints as recurring customer pain in his summary*
 
 ---
 
-### Aisha Muhammad
-**Staff Engineer** at **eBay** · San Jose, CA
-_Staff Engineer · Distributed Databases · eBay_
+### Tobias Gruber
+**Staff SRE, Cassandra Infrastructure** at **DataStax** · Berlin, Germany
+_Staff SRE, Cassandra Infrastructure · DataStax_
 
 **Score:** 97/100 &nbsp;|&nbsp; **Segment:** `obvious_fit`
 
-**Qualifier reasoning:** Aisha is a Staff Engineer at eBay directly owning Cassandra-based infrastructure at massive scale (1.5B listings). She has clear decision-making authority over the database stack as a capacity planning and reliability owner. 10 years of experience confirms seniority. She is publicly vocal about Cassandra's operational burden on Twitter — a textbook pain signal. eBay's scale virtually guarantees latency, cost, and operational complexity pain points that ScyllaDB directly addresses.
+**Qualifier reasoning:** Tobias is a Staff SRE owning Cassandra Infrastructure at DataStax — a textbook senior technical target. 7 years of deep Cassandra ops experience, personally authored the split-brain recovery runbook (triggered 11x in production), and tunes compaction and repair weekly. Staff SRE title carries real organizational influence. His pain points map precisely to ScyllaDB's differentiators, and his own framing — "very concrete opinions about what's hard versus what should be easier" — signals openness to alternatives.
 
-**ScyllaDB angle:** Drop-in Cassandra replacement eliminating the operational burden she publicly complains about — fewer nodes, 10x lower P99 latency at 1.5B-listing scale, up to 5x TCO reduction, no API rewrite required.
+**ScyllaDB angle:** Lead with ScyllaDB's reduced repair and compaction overhead. His split-brain, repair scheduling, and JVM tuning pain points map directly to ScyllaDB's shard-per-core architecture and self-managed compaction — fewer runbooks, fewer nodes, less tuning.
 
 **Pain points identified:**
 
-- Cassandra operational burden (publicly stated on Twitter)
-- Capacity planning complexity at 1.5B listing scale
-- Reliability overhead for product catalog, recommendations, and inventory workloads
-- High infrastructure cost at eBay's hyperscale
-- Cassandra upgrade and tuning complexity
+- Split-brain recovery complexity (authored runbook, triggered 11x in prod)
+- Repair scheduling overhead at scale
+- Compaction tuning burden
+- JVM tuning for large Cassandra clusters
+- Operational complexity of globally managed Cassandra infrastructure
 
 **LinkedIn invite** *(dry-run)*
 
-> You've been vocal about Cassandra's operational burden — owning that stack for 1.5B eBay listings, I'd imagine tuning and capacity planning alone is a second job. ScyllaDB is a drop-in replacement that's cut P99 latency 10x and TCO by 5x at comparable scale. Worth 15 minutes?
+> Tobias — Staff SRE on Cassandra infra at DataStax, 7 years deep in repair scheduling and compaction tuning. You know exactly what's hard. Worth 15 min to compare how ScyllaDB's shard-per-core handles compaction vs. what you're tuning today?
 
-*Hooks used: Owns Cassandra-based infrastructure at eBay powering 1.5B listings, Publicly vocal about Cassandra's operational burden on Twitter, Responsible for capacity planning and reliability at hyperscale*
-*Characters: 276/300*
+*Hooks used: Staff SRE, Cassandra Infrastructure at DataStax, 7 years of Cassandra ops experience, Weekly compaction tuning and repair scheduling work noted in profile*
+*Characters: 240/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** Cassandra ops burden at 1.5B-listing scale — ScyllaDB
+**Subject:** Cassandra repair overhead vs. ScyllaDB — 15 min?
 
-Aisha,
+Tobias,
 
-You mentioned Cassandra's operational overhead publicly — and running that stack for eBay's product catalog, recommendations, and inventory at 1.5B listings, I'd expect capacity planning alone consumes a disproportionate share of your team's time.
+You authored DataStax's split-brain recovery runbook — triggered 11 times in production. That's not a documentation exercise, that's a signal about operational ceiling.
 
-ScyllaDB is a wire-compatible Cassandra replacement. No API rewrite. In production at comparable hyperscale deployments, teams see 10x lower P99 latency, 5x TCO reduction, and a significantly thinner ops footprint.
+The repair scheduling and compaction burden you're managing weekly at global scale maps directly to where ScyllaDB's shard-per-core architecture makes different tradeoffs. Fewer tuning knobs, no JVM, self-managed compaction.
 
-Worth a 15-minute call to walk through what the migration path looks like at your scale?
+Given your 7 years running this at DataStax, I'd value a direct technical conversation — not a pitch. Would you be open to 15 minutes comparing operational models?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Owns Cassandra infrastructure at eBay supporting 1.5B listings, Publicly vocal about Cassandra operational burden on Twitter, Directly responsible for capacity planning and reliability across catalog, recommendations, and inventory workloads, eBay hyperscale makes latency, cost, and ops complexity pain points concrete and addressable*
+*Hooks used: Authored DataStax internal split-brain recovery runbook, triggered 11x in production, Staff SRE owning globally distributed Cassandra infrastructure, Weekly repair scheduling and compaction tuning responsibilities, 7 years of Cassandra operational experience at DataStax, JVM tuning listed as core skill — maps to ScyllaDB's no-JVM differentiator*
 
 ---
 
 ## High potential / low experience (3/3)
 
-### Jake Morrison
-**Software Engineer II** at **Netflix** · Los Gatos, CA
-_Software Engineer II · Cassandra Platform · Netflix_
+### Dakarai Moyo
+**Junior Software Engineer, DSE** at **DataStax** · Johannesburg, South Africa
+_Junior Software Engineer, DSE · DataStax_
 
 **Score:** 72/100 &nbsp;|&nbsp; **Segment:** `high_potential_low_experience`
 
-**Qualifier reasoning:** Jake is a Software Engineer II (~2 years) on Netflix's dedicated Cassandra Platform team — one of the most sophisticated Cassandra deployments globally. He's deeply embedded in internals: SSTable compaction, schema management, capacity automation. Decision-making authority is limited today, but his Stanford CS background, steep trajectory, and explicit "growing toward senior" signal suggest tech lead status within 1–2 years. Platform team engineers at Netflix frequently become internal champions — early cultivation is high value here.
+**Qualifier reasoning:** Junior SE with ~2.5 years on DSE platform team, working on enterprise features: search integration (Solr) and node management tooling. Developing deep operational Cassandra knowledge — cluster failure/recovery at scale — and self-studying LSM-tree internals on personal time. Title and tenure place them squarely in high_potential_low_experience: no organizational authority today, but strong technical trajectory toward a senior distributed storage role in 1–2 years. Solid CS degree from UCT and hands-on DSE/Cassandra stack experience.
 
-**ScyllaDB angle:** Engage Jake on compaction and latency internals — where ScyllaDB's preemptive scheduling and faster compaction directly map to his expertise. Position ScyllaDB as a drop-in Cassandra evolution with operational wins his platform team would own.
+**ScyllaDB angle:** Dakarai's LSM-tree self-study and cluster failure/recovery focus maps directly to ScyllaDB's core strengths. Nurture with ScyllaDB compaction deep-dives and shard-per-core architecture content; position ScyllaDB as the natural next step in their distributed storage career.
 
 **Pain points identified:**
 
-- SSTable compaction complexity and tuning overhead
-- Capacity automation challenges at Netflix's Cassandra scale
-- Schema management friction in large multi-tenant deployments
-- Operational complexity of maintaining a large Cassandra fleet
+- Operational complexity of large DSE enterprise clusters
+- Cluster failure and recovery challenges at scale
+- Self-studying LSM-tree internals suggests DSE tooling lacks sufficient low-level transparency
 
 **LinkedIn invite** *(dry-run)*
 
-> Your internal talk on SSTable compaction strategies caught my attention — that's exactly where ScyllaDB's preemptive scheduling eliminates the tuning overhead Cassandra forces on platform teams. Worth 15 min to compare notes?
+> Dakarai — you're deep in DSE internals and self-studying LSM-trees. ScyllaDB's compaction and shard-per-core architecture would directly answer questions you're already asking. Worth 15 minutes to compare notes?
 
-*Hooks used: Jake authored an internal tech talk on SSTable compaction strategies, He works on Netflix's Cassandra Platform team handling capacity automation and schema management, Compaction tuning overhead is a direct pain point ScyllaDB's architecture addresses*
-*Characters: 225/300*
+*Hooks used: Junior SE on the DSE platform team at DataStax, Self-studying LSM-tree internals on personal time, Focused on cluster failure/recovery at scale*
+*Characters: 211/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** SSTable compaction overhead — how Netflix could reclaim it
+**Subject:** LSM-tree internals: Scylla vs DSE compaction design
 
-Jake,
+Dakarai,
 
-Your work on compaction strategies at Netflix's Cassandra scale is the kind of internals depth that makes the ScyllaDB architecture worth a direct look. Our preemptive scheduler treats compaction as a first-class latency concern — no more manual tuning to stop compaction from starving reads.
+Two and a half years on the DSE platform team gives you a real operational view of Cassandra at scale — cluster failure modes, recovery paths, the limits of what the tooling exposes.
 
-For a platform team running capacity automation at Netflix's scale, the operational delta is meaningful: fewer knobs, more predictable throughput, same CQL interface your tooling already speaks.
+You're already reading LSM-tree internals on your own time. ScyllaDB's compaction strategies and shard-per-core architecture are a direct answer to the questions that work probably keeps raising.
 
-Happy to walk through a compaction benchmark side-by-side — 15 min if you're curious.
+If you're building toward senior distributed storage work, the design tradeoffs are worth understanding firsthand — not just from docs.
+
+15 minutes to walk through the architecture differences?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Jake is on Netflix's dedicated Cassandra Platform team — one of the largest Cassandra deployments globally, He authored an internal tech talk on SSTable compaction strategies, signaling deep internals interest, His team owns capacity automation, directly mapping to ScyllaDB's operational efficiency advantages, ScyllaDB's CQL compatibility positions it as a drop-in evolution his platform tooling can adopt without rewrites*
+*Hooks used: 2.5 years on the DSE platform team at DataStax, Self-studying LSM-tree internals on personal time, Focus on cluster failure and recovery at enterprise scale, Building toward a senior distributed storage role*
 
 ---
 
-### Devon Williams
-**Backend Engineer** at **Riot Games** · Los Angeles, CA
-_Backend Engineer · Game Infrastructure · Riot Games_
+### Chen Wei
+**Software Engineer II, DSE Query** at **DataStax** · Singapore
+_Software Engineer II, DSE Query · DataStax_
 
 **Score:** 72/100 &nbsp;|&nbsp; **Segment:** `high_potential_low_experience`
 
-**Qualifier reasoning:** Devon is 2 years in at Riot Games, directly owning production Cassandra workloads for leaderboard and player-state services — a textbook ScyllaDB use case. Gaming is notorious for extreme write throughput and latency sensitivity at peak events, and Devon explicitly flags latency spikes as a pain point. Decision-making authority is limited at this seniority level, but the trajectory is strong (EA intern → Riot infra ownership in 2 years). Engineers with hands-on production pain often become the most credible internal champions for stack changes.
+**Qualifier reasoning:** SWE II on DSE Query team, ~4 years total. Deep technical focus: CQL parsing, query planning, secondary indexes, execution engine. Fixed a P99 latency bug on the range query path for wide partitions — exactly ScyllaDB's competitive differentiator. No organizational authority yet, but trajectory toward query-layer domain expertise is clear. Strong long-game nurture; likely senior within 1-2 years.
 
-**ScyllaDB angle:** Drop-in Cassandra compatibility = zero rewrite risk for Devon's leaderboard/player-state services. Lead with P99 latency improvements that directly address the peak-event spikes Devon already feels. Position ScyllaDB as an upgrade Devon can champion internally without asking the team to start over.
+**ScyllaDB angle:** Chen Wei has direct hands-on experience with P99 latency in DSE range queries and wide partitions — ScyllaDB's core differentiator. Outreach framing around execution engine architecture and latency trade-offs would land precisely on their stated technical interests.
 
 **Pain points identified:**
 
-- Cassandra P99 latency spikes during peak gaming events (tournaments, ranked resets)
-- Scaling Cassandra for high-concurrency leaderboard and player-state workloads
-- Operational complexity of Cassandra at gaming scale
+- P99 latency degradation with wide partitions in DSE range queries
+- Secondary index limitations at scale in Cassandra/DSE
+- Complexity of DSE query execution layer tuning
 
 **LinkedIn invite** *(dry-run)*
 
-> Leaderboard and player-state on Cassandra at Riot scale — peak-event latency spikes are a known pain. ScyllaDB is CQL-compatible and cuts P99s significantly with no rewrite. Worth 15 min?
+> Chen Wei — you fixed P99 latency on DSE's range query path for wide partitions. That's exactly where ScyllaDB's execution engine makes different trade-offs. 15 min to compare architecture notes?
 
-*Hooks used: Devon owns production Cassandra leaderboard and player-state services at Riot Games, Explicitly flagged peak-event latency spikes as a pain point, Drop-in Cassandra compatibility means zero rewrite risk for his existing services*
-*Characters: 187/300*
+*Hooks used: Software Engineer II on the DSE Query team at DataStax, Fixed a long-standing P99 latency bug on the range query path affecting wide partitions*
+*Characters: 194/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** Cassandra P99 spikes on Riot leaderboards
+**Subject:** DSE vs Scylla: range query latency on wide partitions
 
-Devon,
+Chen Wei,
 
-Running leaderboards and player-state on Cassandra at Riot's scale is already a hard problem — ranked resets and tournament spikes make it harder. You flagged peak-event latency as a real pain point, and that's exactly where Cassandra tends to fall apart at high concurrency.
+Three years deep on DSE's query execution layer — CQL parsing, query planning, secondary indexes — puts you in a rare position to evaluate these trade-offs seriously.
 
-ScyllaDB is CQL-compatible, so your existing Go services and data model carry over without a rewrite. Engineers in similar gaming infra roles have seen P99 latency drop significantly after migration.
+The P99 bug you fixed on the range query path for wide partitions is a known pain point in the Cassandra execution model. ScyllaDB's shard-per-core architecture handles that path differently, with measurable impact on tail latency at scale.
 
-Worth a 15-min call to walk through what that looks like at your workload scale?
+I'm not pitching a migration. I'd rather compare execution engine design notes with someone who actually works at that layer.
+
+15 minutes — worth it?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Devon owns production Cassandra leaderboard and player-state services at Riot Games, Explicitly cited latency spikes during peak gaming events as a current pain point, Uses Go for backend services — directly compatible with ScyllaDB driver ecosystem, Drop-in Cassandra CQL compatibility = no rewrite required for his existing services*
+*Hooks used: Software Engineer II on the DSE Query team at DataStax, Three years on the DSE query team focused on CQL parsing, query planning, and secondary indexes, Fixed a long-standing P99 latency bug on the range query path for wide partitions, Stated goal of becoming a domain expert on the query execution layer*
 
 ---
 
-### Fatima Al-Rashidi
-**Site Reliability Engineer** at **Discord** · Remote
-_Site Reliability Engineer · Discord · Infrastructure_
+### James Osei
+**Software Engineer II, Astra DB** at **DataStax** · Toronto, Canada
+_Software Engineer II, Astra DB · DataStax_
 
-**Score:** 72/100 &nbsp;|&nbsp; **Segment:** `high_potential_low_experience`
+**Score:** 62/100 &nbsp;|&nbsp; **Segment:** `high_potential_low_experience`
 
-**Qualifier reasoning:** Fatima is a 2-year SRE at Discord, directly owning Cassandra availability and performance for Discord's massive message-storage fleet — on-call rotations and runbooks included. She lacks seniority for purchase authority today, but her daily immersion in Cassandra ops pain (latency, GC, node sprawl) at one of the industry's most-watched Cassandra deployments makes her a strong future champion. Trajectory to Staff/Senior SRE or tech lead is realistic within 1–2 years. Prior DevOps role at Canonical reinforces infrastructure depth.
+**Qualifier reasoning:** James is a Software Engineer II at DataStax with ~3 years total experience (2 at DataStax), placing him in the junior-to-mid range. He works directly on the Astra DB backend — tenant isolation, billing integration, multi-tenancy, resource quotas, and the CQL execution path. Two merged OSS Cassandra commits signal growing ecosystem engagement. His stated goal to specialize in storage-layer work points to a clear trajectory toward senior technical influence within 1–2 years. Limited authority today, but strong technical foundation and growth vector make him a solid long-game nurture.
 
-**ScyllaDB angle:** Engage as a technical peer on Discord's Cassandra ops pain (GC pressure, tail latency, node sprawl). ScyllaDB's drop-in Cassandra compatibility means no rewrite — just less on-call pain. Nurture now; she's rapidly building institutional knowledge and decision influence.
+**ScyllaDB angle:** Engage on CQL execution path and multi-tenancy challenges — ScyllaDB's thread-per-core architecture offers compelling contrasts to Astra DB's tenant isolation model. Seed awareness now; revisit as he moves into storage-layer specialization.
 
 **Pain points identified:**
 
-- High on-call burden managing large-scale Cassandra fleet
-- Operational complexity of Cassandra at Discord's traffic scale
-- P99 latency pressure on message-storage workloads
-- Cassandra GC pauses and tuning overhead at extreme scale
+- Multi-tenancy complexity and resource quota enforcement at scale
+- CQL execution path performance and latency predictability
+- Storage layer limitations in managed Cassandra environments
+- Operational overhead of Astra DB's distributed backend
 
 **LinkedIn invite** *(dry-run)*
 
-> Fatima — owning Cassandra on-call at Discord's scale is no small thing. GC pressure and tail latency at that message volume are brutal. ScyllaDB is a drop-in replacement that cuts most of that pain. Worth 15 min?
+> James — you're working the CQL execution path and tenant isolation at DataStax, so you've seen these tradeoffs firsthand. Worth 15 min to compare notes on how ScyllaDB's thread-per-core model handles multi-tenancy at the storage layer?
 
-*Hooks used: Owns Cassandra availability and on-call rotations at Discord, Discord's Cassandra fleet is one of the most-watched in the industry, Qualification flags GC pressure and P99 tail latency as active pain points, ScyllaDB's drop-in Cassandra compatibility is directly relevant*
-*Characters: 212/300*
+*Hooks used: Software Engineer II on Astra DB backend at DataStax, Works on tenant isolation layer and CQL execution path, Stated interest in specializing in storage-layer work*
+*Characters: 235/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** Discord's Cassandra on-call load — a data point
+**Subject:** Multi-tenancy at the storage layer — ScyllaDB vs Astra DB
 
-Fatima,
+James,
 
-Managing on-call rotations for Discord's message-storage Cassandra fleet means you're absorbing some of the worst GC pause and tail latency problems in the industry at that traffic scale.
+Two years on the Astra DB backend working tenant isolation and CQL execution puts you closer to these tradeoffs than most. ScyllaDB's thread-per-core architecture handles multi-tenancy and resource quota enforcement in a fundamentally different way than managed Cassandra — no JVM, predictable per-shard scheduling, hard latency isolation between tenants.
 
-ScyllaDB is a drop-in Cassandra replacement — same CQL, same drivers — built on a shard-per-core architecture that eliminates JVM GC entirely. Teams running comparable write-heavy workloads have cut node counts significantly and reduced P99 latency without a rewrite.
+Given your trajectory toward storage-layer specialization, the architectural contrast is worth understanding directly rather than from docs.
 
-Happy to share Discord-relevant benchmarks if that's useful, or just talk Cassandra ops for 15 minutes.
+Would a 15-min technical comparison call be useful?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Owns on-call rotations for Discord's Cassandra message-storage fleet, GC pauses and P99 tail latency are explicitly identified pain points at Discord's scale, ScyllaDB's drop-in Cassandra compatibility means no rewrite — directly addresses her operational context, Discord's Cassandra deployment is noted as one of the most-watched in the industry*
+*Hooks used: 2 years on Astra DB backend team at DataStax, Works on tenant isolation layer and resource quota enforcement, CQL execution path experience, Stated goal to specialize in storage-layer work*
 
 ---
 
 ## Wild card (1/1)
 
-### Dr. Rebecca Torres
-**Director of AI/ML Engineering** at **PayPal** · San Jose, CA
-_Director of AI/ML Engineering · PayPal · Real-Time Decisioning_
+### Patrick Dubois
+**Lead Developer Advocate, Apache Cassandra** at **DataStax** · Paris, France
+_Lead Developer Advocate, Apache Cassandra · DataStax_
 
 **Score:** 82/100 &nbsp;|&nbsp; **Segment:** `wild_card`
 
-**Qualifier reasoning:** Dr. Torres owns PayPal's real-time ML decisioning platform with explicit sub-5ms Cassandra feature store SLAs for fraud and risk — a textbook high-stakes Cassandra workload. However, she is not a pure infra/database owner, so she's not obvious_fit. The wild_card is earned because she's exploring PM/product roles, making her a strong ScyllaDB product hire candidate, and her AI Infra Summit keynote gives her broad ecosystem influence bridging ML and data infrastructure.
+**Qualifier reasoning:** Patrick is DataStax's Lead Cassandra DevRel — technically credible with 5 years of hands-on Cassandra ops at OVHcloud before DevRel. He runs a 28K-subscriber YouTube channel, hosts live coding sessions, and speaks at 10–15 conferences/year. His InfoQ-picked Cassandra-vs-alternatives comparison shows he already engages the narrative ScyllaDB competes in. He shapes community perception at scale and has the technical depth to evaluate ScyllaDB honestly — making him a high-value ecosystem connector and potential recruit.
 
-**ScyllaDB angle:** Dual approach: (1) Sales — ScyllaDB's P99 latency advantage is directly measurable ROI against her sub-5ms fraud/risk SLA on Cassandra at PayPal scale. (2) Talent/Strategic — her PM transition interest and AI infra credibility make her a compelling ScyllaDB product leader candidate.
+**ScyllaDB angle:** Engage as a technical peer on Cassandra ops pain (GC pauses, node sprawl, P99 latency) he experienced firsthand. Pitch a ScyllaDB benchmark deep-dive for content collaboration — his "no sugarcoating" credibility aligns with ScyllaDB's transparent performance story.
 
 **Pain points identified:**
 
-- Sub-5ms feature lookup SLAs on Cassandra at PayPal's transaction scale — P99 latency tail risk directly impacts fraud/risk model quality
-- Operational complexity of maintaining a large Cassandra cluster as a real-time ML feature store
-- High TCO of low-latency Cassandra fleet at PayPal's volume
-- Career transition signals openness to product/PM roles at companies like ScyllaDB
+- GC pause unpredictability in Cassandra ops — lived experience at OVHcloud
+- Cluster sprawl and node count overhead to hit SLA targets
+- P99 latency variance in production Cassandra deployments
+- Audience trust pressure: community expects honest Cassandra limitation coverage
 
 **LinkedIn invite** *(dry-run)*
 
-> Your AI Infra Summit keynote on sub-5ms Cassandra feature lookups for PayPal's fraud decisioning caught my attention. ScyllaDB cuts P99 tail latency significantly vs. Cassandra at that scale — worth 15 minutes?
+> Patrick — you ran Cassandra ops at OVHcloud for 5 years, so GC pauses and P99 variance aren't abstractions for you. Your InfoQ comparison piece caught my attention. Worth 15 min to dig into ScyllaDB's shard-per-core architecture and what it does to those numbers?
 
-*Hooks used: AI Infrastructure Summit 2024 keynote, sub-5ms Cassandra feature store SLA for fraud/risk at PayPal*
-*Characters: 210/300*
+*Hooks used: 5 years as Cassandra ops engineer at OVHcloud — GC and P99 pain is firsthand experience, InfoQ-picked Cassandra-vs-alternatives comparison shows he already engages this narrative, Lead Developer Advocate for Apache Cassandra at DataStax — technically credible peer*
+*Characters: 263/300*
 
 **Follow-up email** *(dry-run)*
 
-**Subject:** PayPal fraud feature store — P99 tail latency on Cassandra
+**Subject:** ScyllaDB vs Cassandra — a benchmark conversation
 
-Dr. Torres,
+Patrick,
 
-Running fraud and risk decisioning at PayPal's transaction volume with a sub-5ms feature lookup SLA is one of the harder Cassandra problems in production today. P99 tail latency is where those SLAs break — and it gets worse as the cluster grows.
+You spent 5 years running Cassandra in production at OVHcloud before moving to DevRel — you know exactly where the GC pause and P99 latency stories get uncomfortable. Your InfoQ comparison piece showed you don't shy away from that.
 
-ScyllaDB is a Cassandra-compatible replacement built in C++ with a shard-per-core architecture that consistently cuts P99 by 3–5x at equivalent throughput. Several financial-scale workloads have moved their feature stores for exactly this reason.
+ScyllaDB's shard-per-core, userspace I/O model eliminates JVM GC entirely. The tail latency and node-count-reduction numbers are documented and reproducible. Given the "no sugarcoating" standard your 28K-subscriber community holds you to, I think a benchmark deep-dive is worth your time.
 
-Worth a 15-minute call to see if the numbers are relevant to your stack?
+15 minutes to walk through the data?
 
 — Yoav, ScyllaDB
 
-*Hooks used: Sub-5ms feature lookup SLA on Cassandra at PayPal for fraud and risk models, Director of AI/ML Engineering owning the real-time ML decisioning platform, PayPal transaction scale amplifies Cassandra P99 tail risk, AI Infrastructure Summit 2024 keynote signals ecosystem visibility and technical credibility*
+*Hooks used: 5 years Cassandra ops at OVHcloud — GC pauses and P99 variance are lived experience, not theory, InfoQ-picked Cassandra-vs-alternatives comparison confirms he already covers this competitive space, Lead Developer Advocate, Apache Cassandra at DataStax — shapes community perception at scale, 28K-subscriber YouTube channel with explicit 'no sugarcoating' credibility standard*
 
 ---
 
 ## Rejected leads (sample — qualifier said no)
 
-**Yara Nasser** — Senior Data Scientist at Careem
-> Yara Nasser is a Senior Data Scientist at Careem focused on demand forecasting, route optimization, and computer vision — all ML/AI work. Her stack is Python, PyTorch, and Apache Spark. She explicitly states that the data infra team handles databases and that she has no involvement in Cassandra or NoSQL infrastructure decisions. While Careem as a company may use NoSQL at scale, Yara has zero proximity to those decisions. Her prior role at Noon is also ML-focused. No database, infrastructure, or backend engineering signals present.
+**Caroline Hu** — Senior Product Marketing Manager at DataStax
+> Caroline Hu is a Senior PMM at DataStax focused on GTM, messaging, positioning, and analyst relations for Astra DB. Her role is firmly in marketing — not engineering, architecture, DevRel, or technical product management. Her background (B.S. Marketing, 4 years at Confluent in PMM, 3 years at DataStax in PMM) confirms a pure marketing trajectory with no technical engineering depth. She does not meet the ICP of technical staff working on DSE, Astra DB infrastructure, or the Cassandra ecosystem.
 
-**Raj Kumar** — Backend Engineer at Razorpay
-> Raj Kumar is a Backend Engineer at Razorpay working exclusively on Django + PostgreSQL + Redis — a purely relational/cache stack with zero signals of Cassandra, DataStax, or distributed NoSQL involvement. His profile explicitly states "no Cassandra or distributed NoSQL in sight." With ~4 years of total experience and no adjacency to the NoSQL ecosystem, he falls entirely outside the ICP. Even Razorpay as a company does not surface any public Cassandra usage signals. No latency, cost, or ops complexity pain points relevant to ScyllaDB are detectable.
+**Diana Fox** — Customer Success Manager at DataStax
+> Diana Fox is a Customer Success Manager at DataStax with a background in SaaS CS (Gainsight). Her own summary explicitly states she does not go deep on Cassandra internals and escalates technical issues to engineering. Her skills are entirely non-technical: account management, renewals, churn prevention, QBRs. She holds a B.A. in Business and has no engineering, architecture, or technical product background. Despite managing 30 Astra DB and DSE enterprise accounts, her role is purely commercial/relationship-focused with zero technical depth relevant to ScyllaDB's value proposition.
 
-**Chris Taylor** — DevOps Engineer at Grubhub
-> Chris Taylor is a DevOps Engineer at Grubhub focused entirely on Kubernetes, Redis, PostgreSQL, Terraform, and CI/CD. His own summary explicitly states "No experience with Cassandra or column-family databases in our current stack." No signals of Cassandra/DataStax/Astra DB usage exist, and his prior Systems Admin role at Morningstar confirms a traditional infrastructure background with zero NoSQL wide-column overlap. No adjacency to ScyllaDB's ICP from any angle.
+**Derek Morrison** — Enterprise Account Executive at DataStax
+> Derek Morrison is a pure enterprise sales professional — an Account Executive at DataStax focused on quota attainment, pipeline management, and executive relationships in financial services accounts. He explicitly states he leaves technical conversations to SAs. His background is entirely in sales (Oracle AE, MongoDB SDR) with a marketing degree. He has zero technical depth in Cassandra, DSE, or Astra DB. He does not meet any criterion of the ICP, which specifically targets technical employees. There is no angle for ScyllaDB outreach as a technical peer, recruit, or ecosystem connector.
 
-**Jessica Brown** — Senior Frontend Engineer at Netflix
-> Jessica is a Senior Frontend Engineer at Netflix focused exclusively on consumer-facing UI with React, TypeScript, and CSS. Her profile explicitly states "no involvement in backend or data infrastructure." Her entire skill set is frontend-oriented with zero signals of database, backend, or NoSQL exposure. While Netflix is a known Cassandra user at scale, Jessica has no proximity to those systems or any database decision-making authority. Prior role at Hulu is similarly frontend-only. She is entirely outside the ICP.
+**Ashley Burns** — Sales Development Representative at DataStax
+> Ashley Burns is a Sales Development Representative at DataStax focused on outbound prospecting for Astra DB in mid-market segments. This is a pure sales role with no technical depth — skills listed are entirely sales-oriented (Outbound Prospecting, Salesforce, Outreach.io, Cold Calling). Prior role was also a BDR at Zscaler. There is zero engineering, architecture, or technical product involvement. Despite touching Astra DB as a product name in their prospecting work, they have no meaningful technical knowledge of the stack. Entirely outside ScyllaDB's ICP.
 
-**Linda Zhao** — Senior Product Manager at Airbnb
-> Linda Zhao is a Senior Product Manager at Airbnb focused entirely on consumer growth, guest discovery, and recommendations. Her own summary explicitly states "no involvement in infrastructure or data systems." Her skill set (A/B Testing, Growth, Roadmapping) and career history (PM at Pinterest) are purely product/consumer-facing. There are no signals of Cassandra, NoSQL, or database infrastructure exposure whatsoever. She falls completely outside ScyllaDB's ICP — neither an engineer/architect, nor an AI/ML leader, nor a DevRel or infrastructure investor.
+**Nina Petrov** — Senior Financial Analyst at DataStax
+> Nina Petrov is a Senior Financial Analyst in FP&A at DataStax, supporting the CFO with financial modeling, board reporting, and budget management. Her skills are entirely finance-oriented (Excel, Tableau, ARR Modeling, SaaS Metrics) with no technical depth in databases, Cassandra, Astra DB, or DSE. Her background is in venture capital finance (Bessemer) and SaaS unit economics — entirely outside the ICP. She has zero engineering, architecture, or product influence relevant to ScyllaDB's competitive positioning.
