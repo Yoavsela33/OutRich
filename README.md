@@ -2,8 +2,10 @@
 
 AI-powered B2B outreach pipeline. Define your ICP and a target competitor's user base — OutRich handles lead discovery, AI qualification, and personalized message drafting at scale, with a full audit trail in a local database.
 
-**Want to see output without running anything?** A complete sample run is committed to this repo — 42 DataStax employees qualified, 10 selected, 20 messages drafted:
+**Want to see output without running anything?** A complete sample run against real DataStax LinkedIn profiles is committed to this repo — 19 real profiles discovered, qualified, 3 selected, 6 messages drafted. Names are anonymized to first name + last initial to protect privacy:
 **[Full report →](data/sample_run/report.md)** &nbsp;|&nbsp; **[Results CSV →](data/sample_run/results.csv)** &nbsp;|&nbsp; **[SQLite DB →](data/sample_run/outrich.db)**
+
+> **Why 3 selected, not 10?** The Apify free tier returns 25 profiles per run. LinkedIn surfaces senior leadership first — this batch was mostly VPs of Sales, marketing, and legal, with 2 engineers and 1 former VP of Product. The pipeline correctly identified them (`not_relevant` for sales/legal, `obvious_fit` for the engineers) and selected from what qualified. A paid Apify run returning 100–200 profiles would fill all quota slots.
 
 ## Viewing the results (no setup required)
 
@@ -11,9 +13,9 @@ All output from a completed pipeline run is committed to this repo. No API keys,
 
 **To see each candidate and the message drafted for them:**
 
-- **[`data/sample_run/report.md`](data/sample_run/report.md)** — The primary human-readable output. Opens directly on GitHub. For each of the 10 selected leads you'll see: full profile, AI qualifier reasoning, ScyllaDB angle, pain points, the LinkedIn connection note (with character count), and the follow-up email — including the personalization hooks the AI used, as an anti-hallucination audit trail. Rejected leads are included at the bottom with the AI's reasoning.
+- **[`data/sample_run/report.md`](data/sample_run/report.md)** — The primary human-readable output. Opens directly on GitHub. For each of the 3 selected leads you'll see: full profile, AI qualifier reasoning, ScyllaDB angle, pain points, the LinkedIn connection note (with character count), and the follow-up email — including the personalization hooks the AI used, as an anti-hallucination audit trail. Rejected leads are included at the bottom with the AI's reasoning.
 
-- **[`data/sample_run/results.csv`](data/sample_run/results.csv)** — Flat table covering all 42 leads. Each row is one candidate. For the 10 selected leads, `linkedin_invite`, `email_subject`, and `email_body` are populated. The `selected` column is `yes`/`no`. Open in Excel, Google Sheets, or any CSV viewer.
+- **[`data/sample_run/results.csv`](data/sample_run/results.csv)** — Flat table covering all 19 leads. Each row is one candidate. For the 3 selected leads, `linkedin_invite`, `email_subject`, and `email_body` are populated. The `selected` column is `yes`/`no`. Open in Excel, Google Sheets, or any CSV viewer.
 
 - **[`data/sample_run/outrich.db`](data/sample_run/outrich.db)** — The SQLite source-of-truth database. Query it with any SQLite viewer (e.g., [DB Browser for SQLite](https://sqlitebrowser.org/), TablePlus, or `sqlite3` in the terminal). Tables: `leads`, `qualifications`, `messages`, `send_log`.
 
@@ -70,7 +72,7 @@ cp .env.example .env
 
 ### Run offline (no Apify needed)
 
-Uses the committed fixture of 42 realistic profiles:
+Uses the committed fixture of 42 AI-generated synthetic DataStax profiles (fictional people, not real employees — designed to simulate a real Apify pull for pipeline demonstration):
 
 ```bash
 make run-fixture
@@ -87,7 +89,9 @@ make run-live
 outrich run --source apify
 ```
 
-Apify responses are cached to `data/cache/apify_discover.json` — subsequent runs use cached data automatically. Force a fresh pull with `--no-cache`.
+Uses the `harvestapi/linkedin-company-employees` actor, querying DataStax's LinkedIn company page directly. Apify responses are cached to `data/cache/apify_discover.json` — subsequent runs use cached data automatically. Force a fresh pull with `--no-cache`.
+
+> **Note:** The Apify free tier caps at 25 profiles per run. LinkedIn surfaces senior leadership first, so a free-tier run will qualify mostly executives and sales roles. Upgrade to a paid plan (or run multiple searches) to surface enough individual contributors to fill all quota slots.
 
 ### Individual stages
 

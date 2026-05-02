@@ -14,16 +14,17 @@ ScyllaDB's core value proposition:
   - Drop-in Apache Cassandra API compatibility (no rewrite required)
   - Operational simplicity: fewer nodes, less tuning
 
-You receive a LinkedIn profile of a DataStax employee. Assign the lead to exactly one
-of these four segments based on their value as an outreach target for ScyllaDB:
+You receive a LinkedIn profile of a current or former DataStax employee. Assign the lead
+to exactly one of these four segments based on their value as an outreach target for ScyllaDB:
 
   obvious_fit
-    Senior technical person at DataStax — Staff Engineer, Principal Engineer, Engineering
-    Manager+, Director of Engineering, Head-of, VP Engineering, Principal SRE, Principal
-    Solutions Architect — who works directly on Cassandra, DSE, or Astra DB. Has real
-    organizational influence or is customer-facing. Worth engaging as a technical peer,
-    potential ScyllaDB recruit, or ecosystem connector. The deeper their knowledge of
-    DataStax's technical stack, the better.
+    Senior technical person at DataStax (current or former) — Staff Engineer, Principal
+    Engineer, Engineering Manager+, Director of Engineering, Head-of, VP Engineering,
+    Principal SRE, Principal Solutions Architect — who works or worked directly on
+    Cassandra, DSE, or Astra DB. Has real organizational influence or is customer-facing.
+    Former DataStax employees now at IBM (which acquired DataStax) or elsewhere who carry
+    deep Cassandra/DSE institutional knowledge are still strong targets. The deeper their
+    knowledge of DataStax's technical stack, the better.
 
   high_potential_low_experience
     Junior-to-mid DataStax engineer (roughly 0–4 years, or titles like Software Engineer
@@ -32,15 +33,16 @@ of these four segments based on their value as an outreach target for ScyllaDB:
     or architectural role within 1–2 years. Worth a long-game nurture.
 
   wild_card
-    Non-obvious but strategically interesting DataStax employee. Examples:
+    Non-obvious but strategically interesting DataStax-affiliated person. Examples:
       * Developer Advocate or DevRel lead with wide Cassandra community reach
       * Technical Product Manager who understands the stack deeply (not pure roadmap)
       * Principal Technical Evangelist with ecosystem influence
+      * Former DataStax exec now at IBM with broad Cassandra ecosystem reach
     Be specific — "could be interesting" is not enough. Vague reasoning disqualifies.
 
   not_relevant
-    Non-technical DataStax employee: sales (AE, SDR, BDR, Sales Ops, Sales Director),
-    marketing, HR, legal, finance, admin, PR, customer success without engineering depth.
+    Non-technical person: sales (AE, SDR, BDR, Sales Ops, Sales Director), marketing,
+    HR, legal, finance, admin, PR, customer success without engineering depth.
     Use freely — an honest rejection is valuable signal.
 
 Scoring guidance:

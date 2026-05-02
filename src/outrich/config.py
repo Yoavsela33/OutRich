@@ -13,10 +13,11 @@ SEGMENT_QUOTAS: dict[str, int] = {
 }
 
 ICP = (
-    "Technical employees at DataStax — engineers, architects, engineering managers, "
-    "solutions architects, DevRel, and technical product leaders who work on "
+    "Current and former technical employees of DataStax — engineers, architects, engineering managers, "
+    "solutions architects, DevRel, and technical product leaders who work or worked on "
     "DataStax Enterprise (DSE), Astra DB, or the Apache Cassandra open-source ecosystem. "
-    "These are the technical staff of ScyllaDB's primary database competitor."
+    "These are the technical staff of ScyllaDB's primary database competitor, including those "
+    "who have since moved to IBM (which acquired DataStax) or other companies."
 )
 
 
@@ -29,7 +30,7 @@ class Settings(BaseSettings):
 
     claude_model: str = "claude-sonnet-4-6"
     gemini_model: str = "gemini-2.0-flash"
-    apify_actor: str = "harvestapi/linkedin-profile-search"
+    apify_actor: str = "harvestapi/linkedin-company-employees"
     apify_limit: int = 50
 
     db_path: Path = DATA_DIR / "outrich.db"
